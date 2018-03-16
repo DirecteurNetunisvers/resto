@@ -1,0 +1,14 @@
+.commander {
+    text-transform: uppercase;
+    height: 40px;
+    border: 1px solid;
+    width: 150px;
+    margin: auto;
+    padding-top: 6px;
+    cursor: pointer;	
+}
+
+.commander:hover {
+	background: black;
+	color: white;
+}
