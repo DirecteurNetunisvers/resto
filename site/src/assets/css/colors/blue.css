@@ -1,15 +1,3 @@
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 /*Theme Colors*/
 /*bootstrap Color*/
@@ -104,9 +92,9 @@ a.link:hover, a.link:focus {
 /*sidebar navigation
 *******************/
 .sidebar-nav {
-  background: #fff; }
+  background: #605d5d; }
   .sidebar-nav ul li a {
-    color: #000; }
+    color: #f6fbfa; }
     .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
       color: #26c6da; }
     .sidebar-nav ul li a.active {
@@ -139,3 +127,7 @@ a.link:hover, a.link:focus {
     color: #ffffff; }
   .card-no-border .sidebar-nav > ul > li > a.active:after {
     border-color: #ffffff; }
+
+aside.left-sidebar {
+    background: #5e5c60 !important;
+}    

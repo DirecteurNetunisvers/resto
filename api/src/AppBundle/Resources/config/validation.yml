@@ -36,3 +36,20 @@ AppBundle\Entity\Boisson:
         gm:
             - NotBlank: ~
             - Type: string
+
+AppBundle\Entity\Pizza:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: nom
+    properties:
+        nom:
+            - NotBlank: ~
+            - Type: string
+        pm:
+            - NotBlank: ~
+            - Type: string
+        gm:
+            - NotBlank: ~
+            - Type: string
+        ingredient:
+            - NotBlank: ~
+            - Type: string            

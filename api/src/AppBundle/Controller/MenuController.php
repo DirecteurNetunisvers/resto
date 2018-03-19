@@ -11,6 +11,8 @@ use FOS\RestBundle\View\ViewHandler;
 use FOS\RestBundle\View\View; // Utilisation de la vue de FOSRestBundle
 use AppBundle\Entity\Boisson;
 use AppBundle\Form\BoissonType;
+use AppBundle\Entity\Pizza;
+use AppBundle\Form\PizzaType;
 
 class MenuController extends Controller {
 
@@ -19,12 +21,11 @@ class MenuController extends Controller {
      * @Rest\Get("/menu/boisson")
      */
     public function getBoissonAction(Request $request) {
-        $places = $this->get('doctrine.orm.entity_manager')
+        $Boisson = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('AppBundle:Boisson')
                 ->findAll();
-        /* @var $places Place[] */
 
-        return $places;
+        return $Boisson;
     }
 
      /**
@@ -42,6 +43,38 @@ class MenuController extends Controller {
             $em->persist($Boisson);
             $em->flush();
             return $Boisson;
+        } else {
+            return $form;
+        }
+    }
+
+    /**
+     * @Rest\View()
+     * @Rest\Get("/menu/pizza")
+     */
+    public function getPizzaAction(Request $request) {
+        $Pizza = $this->get('doctrine.orm.entity_manager')
+                ->getRepository('AppBundle:Pizza')
+                ->findAll();
+
+        return $Pizza;
+    }
+
+     /**
+     * @Rest\View()
+     * @Rest\Post("/menu/pizza")
+     */
+    public function postPizzaAction(Request $request) {
+        $Pizza = new Pizza();
+        $form = $this->createForm(PizzaType::class, $Pizza);
+
+        $form->submit($request->request->all()); // Validation des données
+
+        if ($form->isValid()) {
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($Pizza);
+            $em->flush();
+            return $Pizza;
         } else {
             return $form;
         }

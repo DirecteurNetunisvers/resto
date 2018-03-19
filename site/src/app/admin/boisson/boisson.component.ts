@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -10,30 +11,26 @@ import 'rxjs/add/operator/map';
 
 export class BoissonComponent implements OnInit {
 
-	constructor(private http: Http) { }
+	boisson;
+	insertOrList;
+
+	constructor(
+		private http: Http,
+		private route: ActivatedRoute,
+	) { }
 
 	ngOnInit() {
+		this.insertOrList = (this.route.snapshot.params.insertOrList == 'liste') ? false : true;
+
 		this.http.get("http://localhost/net_api/web/app_dev.php/menu/boisson")
 			.map(
 				(response) => response.json()
 			)
 			.subscribe(
-				(data) => console.log(data)
+				(data) => {
+					this.boisson = data;
+				}
 			)  	
-	}
-
-	onClickSubmit(data) {
-		this.http.post(
-			'http://localhost/net_api/web/app_dev.php/menu/boisson', 
-			data
-		).subscribe(
-			res => {
-				console.log(res);
-			},
-			err => {
-				console.log("Error occured");
-			}
-		);      
 	}
 
 }

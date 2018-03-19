@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { adminRouting } from './admin.routing';
 import { BoissonComponent } from './boisson/boisson.component';
 import { PizzaComponent } from './pizza/pizza.component';
+import { AjoutPizzaComponent } from './pizza/ajout/ajout.component';
+import { AjoutBoissonComponent } from './boisson/ajout/ajout.component';
 // import { RegisterComponent } from './register/register.component';
 // import { AlertComponent } from '../_directives/alert/alert.component';
 // import { LoginComponent } from './login/login.component';
@@ -27,6 +29,8 @@ import { PizzaComponent } from './pizza/pizza.component';
     DashboardComponent,
     BoissonComponent,
     PizzaComponent,
+    AjoutPizzaComponent,
+    AjoutBoissonComponent,
     // RegisterComponent,
     // LoginComponent
   ],
