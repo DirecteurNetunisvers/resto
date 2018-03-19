@@ -1,0 +1,20 @@
+.txtNew {
+    word-wrap: break-word;
+    text-align: start;
+    pointer-events: none;
+}
+
+.txtNew h3 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.color_32 {
+    color: #FFC880;
+}
+
+.font_3 {
+    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+    color: #222222;
+}

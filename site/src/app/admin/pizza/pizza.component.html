@@ -1,3 +1,63 @@
-<p>
-  pizza works!
-</p>
+<div class="row">
+    <div class="col-md-4 pull-left">
+        <a 
+            class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
+            style="color: #fff; background: #0275d8 !important; border: 1px solid #0275d8;"
+            routerLink="/admin/ajoutpizza"
+        >
+            Ajouter un nouveau pizza
+        </a>    
+    </div>
+</div><br>
+
+<div class="row" *ngIf="insertOrList;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un nouveau pizza a été ajouté avec success!</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">Liste des pizzas</h4>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Petite</th>
+                                <th>Grande</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of pizza">
+                                <td>{{i.nom}}</td>
+                                <td>{{i.pm}}</td>
+                                <td>{{i.gm}}</td>
+                                <td style="width: 25%;">
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
+                                        style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
+                                    >
+                                        Modifier
+                                    </a>
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"
+                                    >
+                                        Supprimer
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
