@@ -48,6 +48,21 @@ class MenuController extends Controller {
         }
     }
 
+     /**
+     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
+     * @Rest\Delete("/menu/boisson/{id}")
+     */
+    public function removeBoissonAction(Request $request) {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $Boisson = $em->getRepository('AppBundle:Boisson')
+                    ->find($request->get('id'));
+
+        if ($Boisson) {
+            $em->remove($Boisson);
+            $em->flush();
+        }
+    }
+
     /**
      * @Rest\View()
      * @Rest\Get("/menu/pizza")
@@ -77,6 +92,21 @@ class MenuController extends Controller {
             return $Pizza;
         } else {
             return $form;
+        }
+    }
+
+     /**
+     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
+     * @Rest\Delete("/menu/pizza/{id}")
+     */
+    public function removePizzaAction(Request $request) {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $Pizza = $em->getRepository('AppBundle:Pizza')
+                    ->find($request->get('id'));
+
+        if ($Pizza) {
+            $em->remove($Pizza);
+            $em->flush();
         }
     }    
 

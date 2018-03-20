@@ -13,6 +13,7 @@ export class BoissonComponent implements OnInit {
 
 	boisson;
 	insertOrList;
+	deleted;
 
 	constructor(
 		private http: Http,
@@ -20,7 +21,8 @@ export class BoissonComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.insertOrList = (this.route.snapshot.params.insertOrList == 'liste') ? false : true;
+		this.insertOrList = (this.route.snapshot.params.insertOrList == 'insert') ? true : false;
+		this.deleted = (this.route.snapshot.params.insertOrList == 'deleted') ? true : false;
 
 		this.http.get("http://localhost/net_api/web/app_dev.php/menu/boisson")
 			.map(

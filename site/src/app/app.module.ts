@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
 
 // import { PagesModule } from './pages/pages.module';
@@ -32,6 +34,7 @@ import { AuthGuardService } from './_auth/auth-guard.service';
 import { UsersService } from './_services/table/users.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './pages/contact/contact.component';
 // import { JwtInterceptor } from './_helpers';
 
 
@@ -48,7 +51,8 @@ import { LoginComponent } from './login/login.component';
     AdminSidebarComponent,
     LoginComponent,
     AlertComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,10 @@ import { LoginComponent } from './login/login.component';
     routing,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCZeDurG5gamvy7AGTl-zerIuq-kzoNrRc'
+    })
   ],
   providers: [
     AuthGuardService,

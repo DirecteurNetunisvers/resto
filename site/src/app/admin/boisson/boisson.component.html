@@ -18,6 +18,14 @@
     </div>
 </div>
 
+<div class="row" *ngIf="deleted;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un boisson a été supprimé avec success!</strong>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -49,6 +57,7 @@
                                     <a 
                                         class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
                                         style="color: #fff; background: red !important; border: 1px solid red;"
+                                        routerLink="/admin/deleteboisson/{{i.id}}"
                                     >
                                         Supprimer
                                     </a>

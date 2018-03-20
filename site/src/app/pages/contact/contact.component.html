@@ -1,0 +1,71 @@
+<div class="container">
+	
+	<br><br><br>
+	<div class="row">
+		<div class="col-md-12">
+			<h5 style="text-align:center;" class="font_5">
+				<span style="letter-spacing:0.08em;">NOUS VOUS ATTENDONS !</span>
+			</h5>
+		</div>
+	</div>
+
+	<br><br>
+	<div class="row">
+		<div class="col-md-6">
+			<p style="text-align:center;" class="font_7">
+				ADRESSE
+			</p>
+
+			<p style="text-align:center; line-height:1.5em;" class="font_8">
+				<span style="line-height:1.5em;">1 rue du Château</span>
+			</p>
+
+			<p style="text-align:center; line-height:1.5em;" class="font_8">
+				<span style="line-height:1.5em;">75001 Paris, France</span>
+			</p>
+
+			<p style="text-align:center; line-height:1.5em;" class="font_8">
+				<span style="line-height:1.5em;">
+					<object height="0">
+						<a 
+							class="auto-generated-link" 
+							data-auto-recognition="true" 
+							data-content="info@monsite.com" 
+							href="mailto:info@monsite.com" 
+							data-type="mail"
+						>
+							info@monsite.com
+						</a>
+					</object> \\ Tel: 01 23 45 67 89
+				</span>
+			</p>
+		</div>
+		<div class="col-md-6">
+			<p style="text-align:center;" class="font_7">
+				HEURES D'OUVERTURE
+			</p>
+
+			<p style="text-align:center; line-height:1.5em;" class="font_8">
+				<span style="line-height:1.5em;">lundi – vendredi 07h00 – 22h00</span>
+			</p>
+
+			<p style="text-align:center; line-height:1.5em;" class="font_8">
+				<span style="line-height:1.5em;">samedi 09h00 – 22h00</span>
+			</p>
+
+			<p style="text-align:center; line-height:1.5em;" class="font_8">
+				<span style="line-height:1.5em;">dimanche 08h00 –23h00</span>
+			</p>
+		</div>
+	</div>
+
+	<br><br>
+	<!-- this creates a google map on the page with the given lat/lng from -->
+	<!-- the component as the initial center of the map: -->
+	<agm-map [latitude]="lat" [longitude]="lng">
+	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+	</agm-map>
+
+</div>
+
+
