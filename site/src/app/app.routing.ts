@@ -10,6 +10,7 @@ import { PizzaComponent } from './pages/pizza/pizza.component';
 import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './_directives/alert/alert.component';
 import { RegisterComponent } from './register/register.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 // Guard
 import { AuthGuardService as AuthGuard } from './_auth/auth-guard.service';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
             { path: '', component: HomeComponent, pathMatch: 'full' },
             { path: 'about', component: HomeComponent },
             { path: 'pizza', component: PizzaComponent },
+            { path: 'contact', component: ContactComponent },
         ]
     },
 

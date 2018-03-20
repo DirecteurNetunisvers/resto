@@ -11,6 +11,7 @@ export class PizzaComponent implements OnInit {
 
 	pizza;
 	insertOrList;
+	deleted;
 
 	constructor(
 		private http: Http,
@@ -18,7 +19,8 @@ export class PizzaComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.insertOrList = (this.route.snapshot.params.insertOrList == 'liste') ? false : true;
+		this.insertOrList = (this.route.snapshot.params.insertOrList == 'insert') ? true : false;
+		this.deleted = (this.route.snapshot.params.insertOrList == 'deleted') ? true : false;
 
 		this.http.get("http://localhost/net_api/web/app_dev.php/menu/pizza")
 			.map(
