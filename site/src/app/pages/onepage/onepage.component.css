@@ -1,0 +1,96 @@
+/* Styles go here */
+* { box-sizing: border-box};
+legend {background-color: #fff};
+ul {list-style: none}
+ul li {display: inline-block; border: 1px solid #999; padding: 10px; cursor: pointer;}
+ul li.current { background: #333; color: #fff}
+
+.scrollable { 
+  height: 200px; 
+  border: 1px solid #999; 
+  position: relative;
+}
+
+/*.scrollable > div:nth-child(odd) { background-color: #ccc}*/
+
+ul.window {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  background: yellow; 
+  z-index: 1;
+}
+
+ul.window li {display: block; }
+
+.scrollable.section {
+  overflow:auto;
+  height: 600px;
+}
+
+.horizontal {
+  height: 100px;
+  width: 100%;
+  max-width: 450px;
+  white-space: nowrap;
+  overflow-y: hidden !important;
+}
+.horizontal > div {
+  border: 1px solid #666;
+  width: 200px;
+  height: 800px;
+  display: inline-block;
+  text-align: center;
+}
+
+.menu {
+    height: 60px;
+    background: #292b2c;
+    padding-top: 15px;  
+}
+
+.menu a {
+    cursor: pointer;
+    color: white;
+}
+
+.menu a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#s1 {
+    background: url('https://static.wixstatic.com/media/84770f_8323103996f340df8b2b2d8504ce201f.jpg/v1/fill/w_1299,h_881,al_c,q_85,usm_0.66_1.00_0.01/84770f_8323103996f340df8b2b2d8504ce201f.webp');
+    height: 600px;
+}
+
+#s2 {
+  height: auto;
+}
+
+#s3 {
+  height: auto;
+}
+
+/*Pour la section accueil*/
+.txtNew {
+    word-wrap: break-word;
+    text-align: start;
+    pointer-events: none;
+}
+
+.txtNew h3 {
+    margin: 0;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.color_32 {
+    color: #FFC880;
+}
+
+.font_3 {
+    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+    color: #222222;
+}
+/*Fin pour la section accueil*/

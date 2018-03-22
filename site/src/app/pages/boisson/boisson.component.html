@@ -1,35 +1,32 @@
 <div class="container">
-	<br>
-
     <div class="row">
         <div class="col-md-4">
-            <h1>NOS PIZZAS</h1>
+            <h1>NOS BOISSONS</h1>
         	<hr style="border-bottom: 3px solid rgba(153, 153, 153, 1) !important;">
         </div>
     </div>
-
+	
     <div class="row">
     	<div class="col-md-8">
     		
     	</div>
     	<div class="col-md-2">
-    		<p><strong>Petite</strong></p>
+    		<p><strong>33cl</strong></p>
     	</div>
     	<div class="col-md-2">
-    		<p><strong>Grande</strong></p>
+    		<p><strong>50cl</strong></p>
     	</div>
     </div>	
 
-    <div class="row" *ngFor="let i of pizza">
+    <div class="row" *ngFor="let i of boissons">
     	<div class="col-md-8">
-    		<h3>{{i.nom}}</h3>
-    		<p>{{i.ingredient}}<p>
+    		<p>{{i.nom}}</p>
     	</div>
     	<div class="col-md-2">
-    		<p>{{i.pm}}<p>
+    		<p>{{i.pm}}</p>
     	</div>
     	<div class="col-md-2">
-    		<p>{{i.gm}}<p>
+    		<p>{{i.gm}}</p>
     	</div>
-    </div>
+    </div>	
 </div>

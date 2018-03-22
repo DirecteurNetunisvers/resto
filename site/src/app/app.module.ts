@@ -35,6 +35,8 @@ import { UsersService } from './_services/table/users.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { OnepageComponent } from './pages/onepage/onepage.component';
+import { BoissonComponent } from './pages/boisson/boisson.component';
 // import { JwtInterceptor } from './_helpers';
 
 
@@ -52,7 +54,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     LoginComponent,
     AlertComponent,
     RegisterComponent,
-    ContactComponent
+    ContactComponent,
+    OnepageComponent,
+    BoissonComponent
   ],
   imports: [
     BrowserModule,
