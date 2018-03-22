@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './_directives/alert/alert.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { OnepageComponent } from './pages/onepage/onepage.component';
 
 // Guard
 import { AuthGuardService as AuthGuard } from './_auth/auth-guard.service';
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
         path: '',
         component: SiteLayoutComponent,
         children: [
-            { path: '', component: HomeComponent, pathMatch: 'full' },
+            { path: '', component: OnepageComponent, pathMatch: 'full' },
             { path: 'about', component: HomeComponent },
             { path: 'pizza', component: PizzaComponent },
             { path: 'contact', component: ContactComponent },
