@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-pizza',
@@ -9,13 +10,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PizzaComponent implements OnInit {
 
-	pizza;
+	pizzas;
 	insertOrList;
 	deleted;
+	idPizzaTodelete;
 
 	constructor(
 		private http: Http,
 		private route: ActivatedRoute,
+		public ngxSmartModalService: NgxSmartModalService
 	) { }
 
 	ngOnInit() {
@@ -28,9 +31,18 @@ export class PizzaComponent implements OnInit {
 			)
 			.subscribe(
 				(data) => {
-					this.pizza = data;
+					this.pizzas = data;
 				}
 			)  	
 	}
+
+	// ngAfterViewInit() {
+	// 	const obj: Object = this.boissonCourant;
+	// 	this.ngxSmartModalService.setModalData(obj, 'myModal');
+	// }
+
+	supprimerPizza(pizza) {
+		this.idPizzaTodelete = pizza.id;
+	}	
 
 }

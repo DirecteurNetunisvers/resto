@@ -46,7 +46,9 @@ ul.window li {display: block; }
 .menu {
     height: 60px;
     background: #292b2c;
-    padding-top: 15px;  
+    padding-top: 15px;
+    z-index: 9999;
+    width: 100%;    
 }
 
 .menu a {

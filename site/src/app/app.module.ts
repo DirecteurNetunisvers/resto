@@ -5,6 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 // import { PagesModule } from './pages/pages.module';
@@ -60,6 +61,7 @@ import { BoissonComponent } from './pages/boisson/boisson.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     // PagesModule,
     routing,
     FormsModule,

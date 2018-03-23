@@ -32,6 +32,9 @@
             <div class="card-block">
                 <h4 class="card-title">Liste des pizzas</h4>
                 <hr>
+                <div id="overlay" *ngIf="pizzas;">
+                    <div id="text">Chargement des pizzas en cours...</div>
+                </div>               
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -43,10 +46,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of pizza">
-                                <td>{{i.nom}}</td>
-                                <td>{{i.pm}}</td>
-                                <td>{{i.gm}}</td>
+                            <tr *ngFor="let pizza of pizzas">
+                                <td>{{pizza.nom}}</td>
+                                <td>{{pizza.pm}}</td>
+                                <td>{{pizza.gm}}</td>
                                 <td style="width: 25%;">
                                     <a 
                                         class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
@@ -55,9 +58,9 @@
                                         Modifier
                                     </a>
                                     <a 
-                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
+                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down dialog__close-btn ng-tns-c5-2 ng-star-inserted"
                                         style="color: #fff; background: red !important; border: 1px solid red;"
-                                        routerLink="/admin/deletepizza/{{i.id}}"
+                                        (click)="ngxSmartModalService.getModal('myModal').open();supprimerPizza(pizza)"
                                     >
                                         Supprimer
                                     </a>
@@ -70,3 +73,33 @@
         </div>
     </div>
 </div>
+
+<ngx-smart-modal #myModal identifier="myModal">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Attention</h4>
+    </div>
+
+    <div class="modal-body">
+        <h3>Voulez vous vraiment supprimer ce pizza ?</h3>
+    </div>
+
+    <div class="modal-footer">
+        <a 
+            type="button"
+            class="btn btn-default" 
+            data-dismiss="modal"
+            style="color: #fff; background: red !important;"
+            routerLink="/admin/deletepizza/{{idPizzaTodelete}}" 
+        >
+            Supprimer
+        </a>
+        <button 
+            type="button"
+            class="btn btn-primary"
+            style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a;" 
+            (click)="myModal.close()"
+        >
+            Annuler
+        </button>
+    </div>
+</ngx-smart-modal>
