@@ -32,6 +32,9 @@
             <div class="card-block">
                 <h4 class="card-title">Liste des boissons</h4>
                 <hr>
+                <div id="overlay" *ngIf="pizzas;">
+                    <div id="text">Chargement des boissons en cours...</div>
+                </div>                
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -43,10 +46,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of boisson">
-                                <td>{{i.nom}}</td>
-                                <td>{{i.pm}}</td>
-                                <td>{{i.gm}}</td>
+                            <tr *ngFor="let boisson  of boissons">
+                                <td>{{boisson.nom}}</td>
+                                <td>{{boisson.pm}}</td>
+                                <td>{{boisson.gm}}</td>
                                 <td style="width: 25%;">
                                     <a 
                                         class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
@@ -55,9 +58,9 @@
                                         Modifier
                                     </a>
                                     <a 
-                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
-                                        style="color: #fff; background: red !important; border: 1px solid red;"
-                                        routerLink="/admin/deleteboisson/{{i.id}}"
+                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down dialog__close-btn ng-tns-c5-2 ng-star-inserted"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"                                        
+                                        (click)="ngxSmartModalService.getModal('myModal').open(); supprimerBoisson(boisson);"
                                     >
                                         Supprimer
                                     </a>
@@ -70,3 +73,33 @@
         </div>
     </div>
 </div>
+
+<ngx-smart-modal #myModal identifier="myModal">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Attention</h4>
+    </div>
+
+    <div class="modal-body">
+        <h3>Voulez vous vraiment supprimer cette boisson ?</h3>       
+    </div>
+
+    <div class="modal-footer">
+        <a 
+            type="button" 
+            class="btn btn-default" 
+            data-dismiss="modal"
+            style="color: #fff; background: red !important;"
+            routerLink="/admin/deleteboisson/{{idBoissonTodelete}}"
+        >
+            Supprimer
+        </a>
+        <button 
+            type="button" 
+            class="btn btn-primary"
+            style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a;" 
+            (click)="myModal.close()"
+        >
+            Annuler
+        </button>
+    </div>
+</ngx-smart-modal>

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { adminRouting } from './admin.routing';
@@ -24,7 +25,8 @@ import { DeleteBoissonComponent } from './boisson/delete/delete.component';
     CommonModule,
     adminRouting,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgxSmartModalModule.forRoot(),
     // AlertComponent
   ],
   declarations: [
@@ -39,7 +41,8 @@ import { DeleteBoissonComponent } from './boisson/delete/delete.component';
     // LoginComponent
   ],
   providers: [
-    HttpClientModule
+    HttpClientModule,
+    NgxSmartModalService
   ]
 })
 export class AdminModule { }

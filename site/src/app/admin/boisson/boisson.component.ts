@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/operator/map';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-boisson',
@@ -11,13 +12,15 @@ import 'rxjs/add/operator/map';
 
 export class BoissonComponent implements OnInit {
 
-	boisson;
+	boissons;
 	insertOrList;
 	deleted;
+	idBoissonTodelete;
 
 	constructor(
 		private http: Http,
 		private route: ActivatedRoute,
+		public ngxSmartModalService: NgxSmartModalService
 	) { }
 
 	ngOnInit() {
@@ -30,9 +33,17 @@ export class BoissonComponent implements OnInit {
 			)
 			.subscribe(
 				(data) => {
-					this.boisson = data;
+					this.boissons = data;
 				}
 			)  	
 	}
 
+	// ngAfterViewInit() {
+	// 	const obj: Object = this.boissonCourant;
+	// 	this.ngxSmartModalService.setModalData(obj, 'myModal');
+	// }
+
+	supprimerBoisson(boisson) {
+		this.idBoissonTodelete = boisson.id;
+	}
 }
