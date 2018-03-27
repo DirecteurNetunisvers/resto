@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { ActivatedRoute, Router } from '@angular/router';
+import { urlApi } from '../../../config/host';
 
 @Component({
   selector: 'app-delete',
@@ -23,7 +24,7 @@ export class DeletePizzaComponent implements OnInit {
 	}
 
 	deletePizzaById(id) {
-		let url = 'http://localhost/net_api/web/app_dev.php/menu/pizza/' + id;
+		let url = urlApi + '/menu/pizza/' + id;
 	    return this.http.delete(url).subscribe(
 			res => {
 				this.router.navigate(['/admin/pizza/deleted']);

@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { urlApi } from '../../../config/host';
 
 @Component({
   selector: 'app-ajout',
@@ -25,9 +26,9 @@ export class AjoutBoissonComponent implements OnInit {
 			alert(messageErreur);
 			return false;
 		}
-
+		let url = urlApi + '/menu/boisson';
 		this.http.post(
-			'http://localhost/net_api/web/app_dev.php/menu/boisson', 
+			url,
 			data
 		).subscribe(
 			res => {

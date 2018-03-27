@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { urlApi } from '../../config/host';
 
 @Component({
   selector: 'app-boisson',
@@ -9,19 +10,22 @@ import { Http } from '@angular/http';
 export class BoissonComponent implements OnInit {
 
 	boissons;
+	boissonsCharger = false;
 
 	constructor(
 		private http: Http
 	) { }
 
 	ngOnInit() {
-		this.http.get("http://localhost/net_api/web/app_dev.php/menu/boisson")
+		let url = urlApi + '/menu/boisson';
+		this.http.get(url)
 			.map(
 				(response) => response.json()
 			)
 			.subscribe(
 				(data) => {
 					this.boissons = data;
+					this.boissonsCharger = true;
 				}
 			);			
 	}
