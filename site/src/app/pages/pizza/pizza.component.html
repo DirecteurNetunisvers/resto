@@ -1,41 +1,8 @@
 <div class="container">
+    <div id="overlay" *ngIf="!pizzasCharger;">
+        <div id="text">Chargement des pizzas en cours...</div>
+    </div>    
 	<br>
-
-	<div class="row">
-		<div class="col-md-12">
-			<h3 
-				class="font_3" 
-				style="line-height:0.9em; text-align:center;"
-			>
-				<span class="color_32">
-					<span style="font-family:marck script,cursive;">
-						Welcome chez Gusty pizza
-					</span>
-				</span>
-			</h3>
-			<h2 
-				class="font_2" 
-				style="font-size:42px; line-height:0.9em; text-align:center;"
-			>
-				<span style="font-family:marck script,cursive;">
-					<span style="font-size:42px;">Qui nous sommes&nbsp;</span>
-				</span>
-			</h2>
-			<h2 class="font_2" style="font-size:42px; text-align:center;">
-				<span style="font-family:marck script,cursive;">
-					<span style="font-size:42px;">
-						<span class="wixGuard">​</span>
-					</span>
-				</span>
-			</h2>
-			<p class="font_8" style="text-align:center;">
-				<span style="font-family:marck script,cursive;">
-					The people, food and the prime locations make Rodich the perfect place good friends &amp; family to come together and have great time. Everytime you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area.
-				</span>
-			</p>			
-		</div>
-	</div>
-
     <div class="row">
         <div class="col-md-4">
             <h1>NOS PIZZAS</h1>
@@ -57,7 +24,7 @@
 
     <div class="row" *ngFor="let i of pizza">
     	<div class="col-md-8">
-    		<h3>{{i.nom}}</h3>
+    		<h3>{{i.nom | uppercase}}</h3>
     		<p>{{i.ingredient}}<p>
     	</div>
     	<div class="col-md-2">
@@ -67,38 +34,4 @@
     		<p>{{i.gm}}<p>
     	</div>
     </div>
-
-    <br><br><br>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h1>NOS BOISSONS</h1>
-        	<hr style="border-bottom: 3px solid rgba(153, 153, 153, 1) !important;">
-        </div>
-    </div>
-	
-    <div class="row">
-    	<div class="col-md-8">
-    		
-    	</div>
-    	<div class="col-md-2">
-    		<p><strong>33cl</strong></p>
-    	</div>
-    	<div class="col-md-2">
-    		<p><strong>50cl</strong></p>
-    	</div>
-    </div>	
-
-    <div class="row" *ngFor="let i of boissons">
-    	<div class="col-md-8">
-    		<p>{{i.nom}}</p>
-    	</div>
-    	<div class="col-md-2">
-    		<p>{{i.pm}}</p>
-    	</div>
-    	<div class="col-md-2">
-    		<p>{{i.gm}}</p>
-    	</div>
-    </div>	
-
 </div>

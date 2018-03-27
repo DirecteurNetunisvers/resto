@@ -5,7 +5,7 @@
             style="color: #fff; background: #0275d8 !important; border: 1px solid #0275d8;"
             routerLink="/admin/ajoutboisson"
         >
-            Ajouter un nouveau boisson
+            Ajouter une nouvelle boisson
         </a>    
     </div>
 </div><br>
@@ -13,7 +13,7 @@
 <div class="row" *ngIf="insertOrList;">
     <div class="col-md-12">
         <div class="alert alert-success">
-            <strong>Un nouveau boisson a été ajouté avec success!</strong>
+            <strong>Une nouvelle boisson a été ajouté avec succès !</strong>
         </div>
     </div>
 </div>
@@ -21,7 +21,15 @@
 <div class="row" *ngIf="deleted;">
     <div class="col-md-12">
         <div class="alert alert-success">
-            <strong>Un boisson a été supprimé avec success!</strong>
+            <strong>Une nouvelle boisson a été supprimée avec succès !</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="modified;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Une boisson a été modifiée avec succès !</strong>
         </div>
     </div>
 </div>
@@ -31,33 +39,37 @@
         <div class="card">
             <div class="card-block">
                 <h4 class="card-title">Liste des boissons</h4>
-                <hr>
+                <hr>               
                 <div class="table-responsive">
+                    <div id="overlay" *ngIf="!boissonCharger;">
+                        <div id="text">Chargement des boissons en cours...</div>
+                    </div>                     
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Nom</th>
+                                <th>Nom de la boisson</th>
                                 <th>33cl</th>
                                 <th>50cl</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of boisson">
-                                <td>{{i.nom}}</td>
-                                <td>{{i.pm}}</td>
-                                <td>{{i.gm}}</td>
+                            <tr *ngFor="let boisson  of boissons">
+                                <td>{{boisson.nom | uppercase}}</td>
+                                <td>{{boisson.pm}}</td>
+                                <td>{{boisson.gm}}</td>
                                 <td style="width: 25%;">
                                     <a 
                                         class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
                                         style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
+                                        (click)="ngxSmartModalService.getModal('modifierModal').open(); modifierBoisson(boisson);"
                                     >
                                         Modifier
                                     </a>
                                     <a 
-                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
-                                        style="color: #fff; background: red !important; border: 1px solid red;"
-                                        routerLink="/admin/deleteboisson/{{i.id}}"
+                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down dialog__close-btn ng-tns-c5-2 ng-star-inserted"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"                                        
+                                        (click)="ngxSmartModalService.getModal('myModal').open(); supprimerBoisson(boisson);"
                                     >
                                         Supprimer
                                     </a>
@@ -70,3 +82,115 @@
         </div>
     </div>
 </div>
+
+<ngx-smart-modal #myModal identifier="myModal">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Attention</h4>
+    </div>
+
+    <div class="modal-body">
+        <h3>Voulez vous vraiment supprimer cette boisson ?</h3>       
+    </div>
+
+    <div class="modal-footer">
+        <a 
+            type="button" 
+            class="btn btn-default" 
+            data-dismiss="modal"
+            style="color: #fff; background: red !important;"
+            routerLink="/admin/deleteboisson/{{idBoissonTodelete}}"
+        >
+            Supprimer
+        </a>
+        <button 
+            type="button" 
+            class="btn btn-primary"
+            style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a;" 
+            (click)="myModal.close()"
+        >
+            Annuler
+        </button>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #modifierModal identifier="modifierModal">
+    <div *ngIf="boissonToModifier">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+                Modification du boisson {{boissonToModifier.nom}}
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="table-responsive">
+                <form #boiss="ngForm" (ngSubmit)="onClickSubmit(boiss.value)" method="PUT">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nom de la boisson
+                                </th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Nom de la boisson" 
+                                        class="form-control form-control-line"
+                                        name="nom"
+                                        ngModel="{{boissonToModifier.nom}}"
+                                    >
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>33cl</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix pour les 33cl" 
+                                        class="form-control form-control-line"
+                                        name="pm"
+                                        ngModel="{{boissonToModifier.pm}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>50cl</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix pour les 50cl" 
+                                        class="form-control form-control-line"
+                                        name="gm"
+                                        ngModel="{{boissonToModifier.gm}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>
+                                    <input 
+                                        type="hidden"
+                                        name="id"
+                                        ngModel="{{boissonToModifier.id}}"
+                                    >
+                                    <input 
+                                        type="submit" 
+                                        value="Modifier"
+                                        class="btn waves-effect waves-light pull-left hidden-lg-down"
+                                        style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;"
+                                    >
+                                    <a 
+                                        class="btn waves-effect waves-light pull-left hidden-lg-down"
+                                        style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
+                                        (click)="modifierModal.close()"
+                                    >
+                                        Annuler
+                                    </a>                                    
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </form>
+            </div>            
+        </div>
+    </div>
+</ngx-smart-modal>
