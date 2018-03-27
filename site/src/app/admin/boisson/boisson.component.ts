@@ -81,7 +81,7 @@ export class BoissonComponent implements OnInit {
 
 		let body = JSON.stringify(data);
 		let url = urlApi + '/menu/boisson/' + data.id;
-		console.log(options);
+		console.log(this.headers);
 		return this.http.put(
 			url,
 			data,

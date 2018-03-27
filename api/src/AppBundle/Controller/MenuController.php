@@ -65,6 +65,41 @@ class MenuController extends Controller {
 
     /**
      * @Rest\View()
+     * @Rest\Put("/menu/boisson/{id}")
+     */
+    public function updateBoissonAction(Request $request) {
+        $Boisson = $this->get('doctrine.orm.entity_manager')
+                ->getRepository('AppBundle:Boisson')
+                ->find($request->get('id')); // L'identifiant en tant que paramètre n'est plus nécessaire
+        /* @var $Boisson Place */
+
+        if (empty($Boisson)) {
+            return new JsonResponse(
+                ['message' => 'Menu non trouvé'], 
+                Response::HTTP_NOT_FOUND
+            );
+        }
+
+        $form = $this->createForm(BoissonType::class, $Boisson);
+
+         // Le paramètre false dit à Symfony de garder les valeurs dans notre 
+         // entité si l'utilisateur n'en fournit pas une dans sa requête
+        $form->submit($request->request->all(), false);
+
+        if ($form->isValid()) {
+            $em = $this->get('doctrine.orm.entity_manager');
+            // l'entité vient de la base, donc le merge n'est pas nécessaire.
+            // il est utilisé juste par soucis de clarté
+            $em->merge($Boisson);
+            $em->flush();
+            return $Boisson;
+        } else {
+            return $form;
+        }
+    }    
+
+    /**
+     * @Rest\View()
      * @Rest\Get("/menu/pizza")
      */
     public function getPizzaAction(Request $request) {
@@ -107,6 +142,41 @@ class MenuController extends Controller {
         if ($Pizza) {
             $em->remove($Pizza);
             $em->flush();
+        }
+    }
+
+    /**
+     * @Rest\View()
+     * @Rest\Put("/menu/pizza/{id}")
+     */
+    public function updatePizzaAction(Request $request) {
+        $Pizza = $this->get('doctrine.orm.entity_manager')
+                ->getRepository('AppBundle:Pizza')
+                ->find($request->get('id')); // L'identifiant en tant que paramètre n'est plus nécessaire
+        /* @var $Pizza Place */
+
+        if (empty($Pizza)) {
+            return new JsonResponse(
+                ['message' => 'Menu non trouvé'], 
+                Response::HTTP_NOT_FOUND
+            );
+        }
+
+        $form = $this->createForm(PizzaType::class, $Pizza);
+
+         // Le paramètre false dit à Symfony de garder les valeurs dans notre 
+         // entité si l'utilisateur n'en fournit pas une dans sa requête
+        $form->submit($request->request->all(), false);
+
+        if ($form->isValid()) {
+            $em = $this->get('doctrine.orm.entity_manager');
+            // l'entité vient de la base, donc le merge n'est pas nécessaire.
+            // il est utilisé juste par soucis de clarté
+            $em->merge($Pizza);
+            $em->flush();
+            return $Pizza;
+        } else {
+            return $form;
         }
     }    
 
