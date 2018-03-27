@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { urlApi } from '../../config/host';
 
 @Component({
 	selector: 'app-pizza',
@@ -12,32 +13,24 @@ import { Http } from '@angular/http';
 export class PizzaComponent implements OnInit {
 
 	pizza;
-	boissons;
+	pizzasCharger = false;
 
 	constructor(
 		private http: Http
 	) { }
 
 	ngOnInit() {
-		this.http.get("http://localhost/net_api/web/app_dev.php/menu/pizza")
+		let url = urlApi + '/menu/pizza';
+		this.http.get(url)
 			.map(
 				(response) => response.json()
 			)
 			.subscribe(
 				(data) => {
 					this.pizza = data;
+					this.pizzasCharger = true;
 				}
-			);
-
-		this.http.get("http://localhost/net_api/web/app_dev.php/menu/boisson")
-			.map(
-				(response) => response.json()
-			)
-			.subscribe(
-				(data) => {
-					this.boissons = data;
-				}
-			);			
+			);		
 	}
 
 }

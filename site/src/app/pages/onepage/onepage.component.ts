@@ -17,7 +17,8 @@ export class OnepageComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	scrollTo(selector, parentSelector, horizontal) {
+	scrollTo(selector, parentSelector) {
+		let horizontal = false;
 		scrollTo(
 			selector,       // scroll to this
 			parentSelector, // scroll within (null if window scrolling)
@@ -26,8 +27,8 @@ export class OnepageComponent implements OnInit {
 		);
 	}
 
-	scrollEvent(e){
-		console.log('e',e);
+	scrollEvent(){
+		console.log('e');
 	}
 
 }

@@ -1,5 +1,5 @@
 <div class="container">
-    <div id="overlay" *ngIf="pizzas;">
+    <div id="overlay" *ngIf="!pizzasCharger;">
         <div id="text">Chargement des pizzas en cours...</div>
     </div>    
 	<br>
@@ -24,7 +24,7 @@
 
     <div class="row" *ngFor="let i of pizza">
     	<div class="col-md-8">
-    		<h3>{{i.nom}}</h3>
+    		<h3>{{i.nom | uppercase}}</h3>
     		<p>{{i.ingredient}}<p>
     	</div>
     	<div class="col-md-2">
