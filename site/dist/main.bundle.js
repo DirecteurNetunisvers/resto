@@ -48,7 +48,7 @@ var AuthGuardService = /** @class */ (function () {
         this.router = router;
     }
     AuthGuardService.prototype.canActivate = function (route, state) {
-        if (localStorage.getItem('currentUser')) {
+        if (localStorage.getItem('accesUtilisateur')) {
             // logged in so return true
             return true;
         }
@@ -156,7 +156,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/_layout/admin-header/admin-header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"topbar\">\n    <nav class=\"navbar top-navbar navbar-toggleable-sm navbar-light\">\n        <!-- ============================================================== -->\n        <!-- Logo -->\n        <!-- ============================================================== -->\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/admin\" style=\"color: white; font-size: 30px;\">\n                <!-- Logo icon -->\n                <b>\n                    Resto\n                    <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->\n                    \n                    <!-- Light Logo icon -->\n                    <!-- <img src=\"../assets/images/logo-light-icon.png\" alt=\"homepage\" class=\"light-logo\" /> -->\n                </b>\n                <!--End Logo icon -->\n                <!-- Logo text -->\n                <span>\n                    1\n                <!-- Light Logo text -->    \n                <!-- <img src=\"../assets/images/logo-light-text.png\" class=\"light-logo\" alt=\"homepage\" /> -->\n                </span> \n             </a>\n        </div>\n        <!-- ============================================================== -->\n        <!-- End Logo -->\n        <!-- ============================================================== -->\n        <div class=\"navbar-collapse\">\n            <!-- ============================================================== -->\n            <!-- toggle and nav items -->\n            <!-- ============================================================== -->\n            <ul class=\"navbar-nav mr-auto mt-md-0\">\n                <!-- This is  -->\n                <li class=\"nav-item\"> \n                    <a \n                        class=\"nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark\" href=\"javascript:void(0)\"\n                    >\n                        <i class=\"mdi mdi-menu\"></i>\n                    </a> \n                </li>\n                <!-- ============================================================== -->\n                <!-- Search -->\n                <!-- ============================================================== -->\n                <!-- <li class=\"nav-item hidden-sm-down search-box\"> \n                    <a \n                        class=\"nav-link hidden-sm-down text-muted waves-effect waves-dark\" \n                        href=\"javascript:void(0)\"\n                    >\n                        <i class=\"ti-search\"></i>\n                    </a>\n                </li> -->\n            </ul>\n            <!-- ============================================================== -->\n            <!-- User profile and search -->\n            <!-- ============================================================== -->\n            <ul class=\"navbar-nav my-lg-0\">\n                <!-- ============================================================== -->\n                <!-- Profile -->\n                <!-- ============================================================== -->\n                <li class=\"nav-item dropdown\">\n                    <a \n                        class=\"nav-link dropdown-toggle text-muted waves-effect waves-dark\" \n                        routerLink=\"/\"\n                        data-toggle=\"dropdown\" \n                        aria-haspopup=\"true\" \n                        aria-expanded=\"false\"\n                    >\n                        Allez sur le site\n                    </a>\n                </li>\n            </ul>\n        </div>\n    </nav>\n</header>"
+module.exports = "<header class=\"topbar\">\n    <nav class=\"navbar top-navbar navbar-toggleable-sm navbar-light\">\n        <!-- ============================================================== -->\n        <!-- Logo -->\n        <!-- ============================================================== -->\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" routerLink=\"/admin\" style=\"color: white; font-size: 30px;\">\n                <!-- Logo icon -->\n                <b>\n                    Resto\n                    <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->\n                    \n                    <!-- Light Logo icon -->\n                    <!-- <img src=\"../assets/images/logo-light-icon.png\" alt=\"homepage\" class=\"light-logo\" /> -->\n                </b>\n                <!--End Logo icon -->\n                <!-- Logo text -->\n                <span>\n                    1\n                <!-- Light Logo text -->    \n                <!-- <img src=\"../assets/images/logo-light-text.png\" class=\"light-logo\" alt=\"homepage\" /> -->\n                </span> \n             </a>\n        </div>\n        <!-- ============================================================== -->\n        <!-- End Logo -->\n        <!-- ============================================================== -->\n        <div class=\"navbar-collapse\">\n            <!-- ============================================================== -->\n            <!-- toggle and nav items -->\n            <!-- ============================================================== -->\n            <ul \n                class=\"navbar-nav mr-auto mt-md-0\" \n                style=\"width: 80% !important;margin: 0 !important;\"\n            >\n                <!-- This is  -->\n                <li class=\"nav-item\"> \n                    <a \n                        class=\"nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark\" href=\"javascript:void(0)\"\n                    >\n                        <i class=\"mdi mdi-menu\"></i>\n                    </a> \n                </li>\n                <!-- ============================================================== -->\n                <!-- Search -->\n                <!-- ============================================================== -->\n                <!-- <li class=\"nav-item hidden-sm-down search-box\"> \n                    <a \n                        class=\"nav-link hidden-sm-down text-muted waves-effect waves-dark\" \n                        href=\"javascript:void(0)\"\n                    >\n                        <i class=\"ti-search\"></i>\n                    </a>\n                </li> -->\n            </ul>\n            <!-- ============================================================== -->\n            <!-- User profile and search -->\n            <!-- ============================================================== -->\n            <ul class=\"navbar-nav my-lg-0\">\n                <!-- ============================================================== -->\n                <!-- Profile -->\n                <!-- ============================================================== -->\n                <li class=\"nav-item dropdown\">\n                    <a \n                        class=\"nav-link dropdown-toggle text-muted waves-effect waves-dark\" \n                        routerLink=\"/\"\n                        data-toggle=\"dropdown\" \n                        aria-haspopup=\"true\" \n                        aria-expanded=\"false\"\n                    >\n                        Allez sur le site\n                    </a>\n                </li>\n            </ul>\n        </div>\n    </nav>\n</header>"
 
 /***/ }),
 
@@ -218,7 +218,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/_layout/admin-layout/admin-layout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"main-wrapper\">\n\t<admin-header></admin-header>\n\t<admin-sidebar></admin-sidebar>\n\n\t<div class=\"page-wrapper\">\n\t    <!-- ============================================================== -->\n\t    <!-- Container fluid  -->\n\t    <!-- ============================================================== -->\n\t    <div class=\"container-fluid\">\n\t        <!-- ============================================================== -->\n\t        <!-- Bread crumb and right sidebar toggle -->\n\t        <!-- ============================================================== -->\n\t        <div class=\"row page-titles\">\n\t            <div class=\"col-md-5 col-8 align-self-center\">\n\t                <h3 class=\"text-themecolor\">Tableau de bord</h3>\n\t                <ol class=\"breadcrumb\">\n\t                    <li class=\"breadcrumb-item\"><a href=\"javascript:void(0)\">Accueil</a></li>\n\t                    <li class=\"breadcrumb-item active\">Tableau de bord</li>\n\t                </ol>\n\t            </div>\n\t        </div>\t\n\t\t\n\t\t\t<router-outlet></router-outlet>\n\n\t    </div>\n\t    <!-- ============================================================== -->\n\t    <!-- End Container fluid  -->\n\t    <!-- ============================================================== -->\n\t    <!-- ============================================================== -->\n\t    <!-- footer -->\n\t    <!-- ============================================================== -->\n\t    <footer class=\"footer\">\n\t\t\t© 2018 <strong>PAMF</strong> - Tous droits réservés - Création \n\t\t\t<a href=\"https://www.kook-agency.fr/\" target=\"blank\" title=\"Création Site Internet\">kook-agency.fr\n\t\t\t</a>\t    \t\n\t    </footer>\n\t    <!-- ============================================================== -->\n\t    <!-- End footer -->\n\t    <!-- ============================================================== -->\n\t</div>\t\n\n</div>"
+module.exports = "<div id=\"main-wrapper\">\n\t<admin-header></admin-header>\n\t<admin-sidebar></admin-sidebar>\n\n\t<div class=\"page-wrapper\">\n\t    <!-- ============================================================== -->\n\t    <!-- Container fluid  -->\n\t    <!-- ============================================================== -->\n\t    <div class=\"container-fluid\">\n\t        <!-- ============================================================== -->\n\t        <!-- Bread crumb and right sidebar toggle -->\n\t        <!-- ============================================================== -->\n\t        <div class=\"row page-titles\">\n\t            <div class=\"col-md-5 col-8 align-self-center\">\n\t                <h3 class=\"text-themecolor\">Tableau de bord</h3>\n\t                <ol class=\"breadcrumb\">\n\t                    <li class=\"breadcrumb-item\"><a href=\"javascript:void(0)\">Accueil</a></li>\n\t                    <li class=\"breadcrumb-item active\">Tableau de bord</li>\n\t                </ol>\n\t            </div>\n\t        </div>\t\n\t\t\n\t\t\t<router-outlet></router-outlet>\n\n\t    </div>\n\t    <!-- ============================================================== -->\n\t    <!-- End Container fluid  -->\n\t    <!-- ============================================================== -->\n\t    <!-- ============================================================== -->\n\t    <!-- footer -->\n\t    <!-- ============================================================== -->\n\t    <footer class=\"footer\">\n\t\t\t© 2018 Tous droits réservés - Création \n\t\t\t<a href=\"https://www.kook-agency.fr/\" target=\"blank\" title=\"Création Site Internet\">kook-agency.fr\n\t\t\t</a>\t    \t\n\t    </footer>\n\t    <!-- ============================================================== -->\n\t    <!-- End footer -->\n\t    <!-- ============================================================== -->\n\t</div>\t\n\n</div>"
 
 /***/ }),
 
@@ -279,7 +279,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/_layout/admin-sidebar/admin-sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<aside class=\"left-sidebar\">\n    <!-- Sidebar scroll-->\n    <div class=\"scroll-sidebar\">\n        <!-- Sidebar navigation-->\n        <nav class=\"sidebar-nav\">\n            <ul id=\"sidebarnav\">\n                <li> \n                \t<a \n                \t\tclass=\"waves-effect waves-dark\" \n                \t\trouterLink=\"/admin\"\n                \t\taria-expanded=\"false\"\n                \t>\n                \t\t<i class=\"mdi mdi-gauge\"></i><span class=\"hide-menu\">Tableau de bord</span>\n                \t</a>\n                </li>\n                <li> \n                \t<a \n\t                \tclass=\"waves-effect waves-dark\" \n\t                \trouterLink=\"/admin\"\n\t                \taria-expanded=\"false\"\n                \t>\n                \t\t<i class=\"mdi mdi-account-check\"></i><span class=\"hide-menu\">Profil</span>\n                \t</a>\n                </li>\n                <li> \n                    <a \n                        class=\"waves-effect waves-dark\" \n                        routerLink=\"/admin/boisson/liste\"\n                        aria-expanded=\"false\"\n                    >\n                        <i class=\"mdi mdi-table\"></i><span class=\"hide-menu\">Boisson</span>\n                    </a>\n                </li>\n                <li> \n                \t<a \n                \t\tclass=\"waves-effect waves-dark\" \n                \t\trouterLink=\"/admin/pizza/liste\"\n                \t\taria-expanded=\"false\"\n                \t>\n                \t\t<i class=\"mdi mdi-table\"></i><span class=\"hide-menu\">Menu</span>\n                \t</a>\n                </li>\n            </ul>\n        </nav>\n        <!-- End Sidebar navigation -->\n    </div>\n    <!-- End Sidebar scroll-->\n    <!-- Bottom points-->\n    <div class=\"sidebar-footer\">\n        <!-- \n        <a href=\"\" class=\"link\" data-toggle=\"tooltip\" title=\"Configuration\">\n        \t<i class=\"ti-settings\"></i>\n        </a> \n        <a href=\"\" class=\"link\" data-toggle=\"tooltip\" title=\"Email\">\n        \t<i class=\"mdi mdi-gmail\"></i>\n        </a>\n        -->\n        <a \n            routerLink=\"/admin\"\n            class=\"link\" \n            data-toggle=\"tooltip\" \n            title=\"Deconnexion\"\n        >\n            <i class=\"mdi mdi-power\"></i>\n        </a> \n    </div>\n    <!-- End Bottom points-->\n</aside>\n"
+module.exports = "<aside class=\"left-sidebar\">\n    <!-- Sidebar scroll-->\n    <div class=\"scroll-sidebar\">\n        <!-- Sidebar navigation-->\n        <nav class=\"sidebar-nav\">\n            <ul id=\"sidebarnav\">\n                <li> \n                \t<a \n                \t\tclass=\"waves-effect waves-dark\" \n                \t\trouterLink=\"/admin\"\n                \t\taria-expanded=\"false\"\n                \t>\n                \t\t<i class=\"mdi mdi-gauge\"></i><span class=\"hide-menu\">Tableau de bord</span>\n                \t</a>\n                </li>\n                <li> \n                \t<a \n\t                \tclass=\"waves-effect waves-dark\" \n\t                \trouterLink=\"/admin/utilisateur\"\n\t                \taria-expanded=\"false\"\n                \t>\n                \t\t<i class=\"mdi mdi-account-check\"></i><span class=\"hide-menu\">Profil</span>\n                \t</a>\n                </li>\n                <li> \n                    <a \n                        class=\"waves-effect waves-dark\" \n                        routerLink=\"/admin/boisson/liste\"\n                        aria-expanded=\"false\"\n                    >\n                        <i class=\"mdi mdi-table\"></i><span class=\"hide-menu\">Boisson</span>\n                    </a>\n                </li>\n                <li> \n                \t<a \n                \t\tclass=\"waves-effect waves-dark\" \n                \t\trouterLink=\"/admin/pizza/liste\"\n                \t\taria-expanded=\"false\"\n                \t>\n                \t\t<i class=\"mdi mdi-table\"></i><span class=\"hide-menu\">Menu</span>\n                \t</a>\n                </li>\n            </ul>\n        </nav>\n        <!-- End Sidebar navigation -->\n    </div>\n    <!-- End Sidebar scroll-->\n    <!-- Bottom points-->\n    <div class=\"sidebar-footer\">\n        <!-- \n        <a href=\"\" class=\"link\" data-toggle=\"tooltip\" title=\"Configuration\">\n        \t<i class=\"ti-settings\"></i>\n        </a> \n        <a href=\"\" class=\"link\" data-toggle=\"tooltip\" title=\"Email\">\n        \t<i class=\"mdi mdi-gmail\"></i>\n        </a>\n        -->\n        <a \n            routerLink=\"/admin\"\n            class=\"link\" \n            data-toggle=\"tooltip\" \n            title=\"Deconnexion\"\n        >\n            <i class=\"mdi mdi-power\"></i>\n        </a> \n    </div>\n    <!-- End Bottom points-->\n</aside>\n"
 
 /***/ }),
 
@@ -341,7 +341,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/_layout/site-footer/site-footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <footer class=\"footer\" style=\"position: relative;\">\n\t\t© 2018 <strong>PAMF</strong> - Tous droits réservés - Création \n\t\t<a href=\"https://www.kook-agency.fr/\" target=\"blank\" title=\"Création Site Internet\">kook-agency.fr\n\t\t</a>\t    \t\n    </footer>\n</div>"
+module.exports = "<div class=\"container\">\n    <footer class=\"footer\" style=\"position: relative;\">\n\t\t© 2018 - Tous droits réservés - Création \n\t\t<a href=\"https://www.kook-agency.fr/\" target=\"blank\" title=\"Création Site Internet\">kook-agency.fr\n\t\t</a>\t    \t\n    </footer>\n</div>"
 
 /***/ }),
 
@@ -592,33 +592,12 @@ var AuthenticationService = /** @class */ (function () {
     function AuthenticationService(http) {
         this.http = http;
     }
-    AuthenticationService.prototype.login = function (username, password) {
-        /* return this.http.post<any>('/api/authenticate', { username: username, password: password })
-          .map(user => {
-            // login successful if there's a jwt token in the response
-            if (user && user.token) {
-              // store user details and jwt token in local storage to keep user logged in between page refreshes
-              localStorage.setItem('currentUser', JSON.stringify(user));
-            }
-    
-            return user;
-          }); */
-        // const all_users = this.http.get('https://www.aretmic.com/api/server/web/app_dev.php/users');
-        var all_users = this.http.get('http://jsonplaceholder.typicode.com/users');
-        all_users.forEach(function (user) {
-            console.log(user);
-            /* if (user.firstname === username && user.lastname === password) {
-      
-            } */
-        });
-        var test = 'wdsf';
-        localStorage.setItem('currentUser', JSON.stringify({ user: 10 }));
-        localStorage.setItem(test, JSON.stringify({ user: 10 }));
-        return all_users;
+    AuthenticationService.prototype.login = function (url) {
+        return this.http.get(url);
     };
     AuthenticationService.prototype.logout = function () {
         // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem('accesUtilisateur');
     };
     AuthenticationService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -945,7 +924,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".help-block {\n\tcolor: red;\n}", ""]);
 
 // exports
 
@@ -958,7 +937,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\n    <div class=\"container\">\n        <div class=\"col-sm-8 col-sm-offset-2\">\n            <alert></alert>\n\n            <div class=\"col-md-6 col-md-offset-3\">\n                <h2>Login</h2>\n                <form name=\"form\" (ngSubmit)=\"f.form.valid && login()\" #f=\"ngForm\" novalidate>\n                    <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !username.valid }\">\n                        <label for=\"username\">Username</label>\n                        <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"model.username\" #username=\"ngModel\" required />\n                        <div *ngIf=\"f.submitted && !username.valid\" class=\"help-block\">Username is required</div>\n                    </div>\n                    <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !password.valid }\">\n                        <label for=\"password\">Password</label>\n                        <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\" #password=\"ngModel\" required />\n                        <div *ngIf=\"f.submitted && !password.valid\" class=\"help-block\">Password is required</div>\n                    </div>\n                    <div class=\"form-group\">\n                        <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\n                        <!-- <img *ngIf=\"loading\" src=\"assets/images/loading.gif\" /> -->\n                        <a [routerLink]=\"['/register']\" class=\"btn btn-link disabled\">Register</a>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
+module.exports = "<div class=\"jumbotron\">\n    <div class=\"container\">\n        <div class=\"col-sm-8 col-sm-offset-2\">\n            <alert></alert>\n\n            <div class=\"col-md-6 col-md-offset-3\">\n                <h2>Connexion</h2>\n                <form name=\"form\" (ngSubmit)=\"f.form.valid && login()\" #f=\"ngForm\" novalidate>\n                    <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !pseudo.valid }\" >\n                        <label for=\"pseudo\">Pseudo</label>\n                        <input \n                            type=\"text\" \n                            class=\"form-control\" \n                            name=\"pseudo\" \n                            [(ngModel)]=\"model.pseudo\" #pseudo=\"ngModel\" \n                            required \n                        />\n                        <div \n                            *ngIf=\"f.submitted && !pseudo.valid\" \n                            class=\"help-block\"\n                        >\n                            Le champs pseudo est obligatoire\n                        </div>\n                    </div>\n                    <div \n                        class=\"form-group\" \n                        [ngClass]=\"{ 'has-error': f.submitted && !password.valid }\"\n                    >\n                        <label for=\"password\">Mot de passe</label>\n                        <input \n                            type=\"password\" \n                            class=\"form-control\" \n                            name=\"password\" \n                            [(ngModel)]=\"model.password\" #password=\"ngModel\"\n                            required \n                        />\n                        <div *ngIf=\"f.submitted && !password.valid\" class=\"help-block\">\n                            Le champs mot de passe est obligatoire\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <button [disabled]=\"loading\" class=\"btn btn-primary\">Envoyer</button>\n                        <!-- <img *ngIf=\"loading\" src=\"assets/images/loading.gif\" /> -->\n                        <a [routerLink]=\"['/']\" class=\"btn btn-link\">\n                            Revenir sur le site\n                        </a>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -971,6 +950,8 @@ module.exports = "<div class=\"jumbotron\">\n    <div class=\"container\">\n    
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__ = __webpack_require__("../../../../../src/app/_services/authentication.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_alert_service__ = __webpack_require__("../../../../../src/app/_services/alert.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__config_host__ = __webpack_require__("../../../../../src/app/config/host.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -982,6 +963,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+var sha1 = __webpack_require__("../../../../sha1/sha1.js");
 
 
 var LoginComponent = /** @class */ (function () {
@@ -1001,12 +985,24 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.login = function () {
         var _this = this;
+        //this.model.pseudo, this.model.password
         this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
+        var url = __WEBPACK_IMPORTED_MODULE_5__config_host__["a" /* urlApi */] + '/utilisateur/' + this.model.pseudo;
+        this.authenticationService.login(url)
             .subscribe(function (data) {
-            _this.router.navigate([_this.returnUrl]);
+            var idtf = sha1(data['id']);
+            var access = sha1(_this.model.password) == data['password'];
+            if (access) {
+                localStorage.setItem('accesUtilisateur', JSON.stringify({ 'user': idtf }));
+                _this.router.navigate([_this.returnUrl]);
+            }
+            else {
+                _this.alertService.error('Erreur de mot de passe');
+                _this.loading = false;
+            }
+            return false;
         }, function (error) {
-            _this.alertService.error(error);
+            _this.alertService.error(error.error.message);
             _this.loading = false;
         });
     };
