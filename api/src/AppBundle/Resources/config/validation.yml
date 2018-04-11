@@ -52,4 +52,26 @@ AppBundle\Entity\Pizza:
             - Type: string
         ingredient:
             - NotBlank: ~
-            - Type: string            
+            - Type: string
+
+AppBundle\Entity\Utilisateurs:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: pseudo
+    properties:
+        pseudo:
+            - NotBlank: ~
+            - Type: string
+        nom:
+            - NotBlank: ~
+            - Type: string
+        prenom:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+            - Email: ~
+        password:
+            - NotBlank: ~
+            - Type: string
+        role:
+            - NotBlank: ~
+            - Type: string

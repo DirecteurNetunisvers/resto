@@ -6,6 +6,8 @@ import { AjoutPizzaComponent } from './pizza/ajout/ajout.component';
 import { AjoutBoissonComponent } from './boisson/ajout/ajout.component';
 import { DeletePizzaComponent } from './pizza/delete/delete.component';
 import { DeleteBoissonComponent } from './boisson/delete/delete.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { AjoutUtilisateurComponent } from './utilisateur/ajout/ajout.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -16,6 +18,8 @@ const routes: Routes = [
     { path: 'deletepizza/:id', component: DeletePizzaComponent },
     { path: 'ajoutboisson', component: AjoutBoissonComponent },
     { path: 'deleteboisson/:id', component: DeleteBoissonComponent },
+    { path: 'utilisateur', component: UtilisateurComponent },
+    { path: 'ajoututilisateur', component: AjoutUtilisateurComponent },
 ];
 
 export const adminRouting = RouterModule.forChild(routes);
