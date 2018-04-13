@@ -28,7 +28,6 @@ export class UtilisateurComponent implements OnInit {
 			)
 			.subscribe(
 				(data) => {
-					console.log(data);
 					this.utilisateurs = data;
 					this.utilisateursCharger = (data.length > 0) ? true : false;
 				}
