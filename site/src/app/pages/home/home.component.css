@@ -5,10 +5,13 @@
     width: 150px;
     margin: auto;
     padding-top: 6px;
-    cursor: pointer;	
+    cursor: pointer;
+	background: black;
+	color: white;    	
 }
 
 .commander:hover {
-	background: black;
-	color: white;
+	background: white;
+	color: black;
+
 }

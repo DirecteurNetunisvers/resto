@@ -62,7 +62,8 @@ ul.window li {display: block; }
 }
 
 #s1 {
-    background: url('https://static.wixstatic.com/media/84770f_8323103996f340df8b2b2d8504ce201f.jpg/v1/fill/w_1299,h_881,al_c,q_85,usm_0.66_1.00_0.01/84770f_8323103996f340df8b2b2d8504ce201f.webp');
+    background: url('./../slider_template_1.jpg');
+    background-size: cover;
     height: 600px;
 }
 
