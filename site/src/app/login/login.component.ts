@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
                     let idtf = sha1(data['id']);
                     let access = sha1(this.model.password) == data['password'];
                     if ( access ) {
-                        localStorage.setItem('accesUtilisateur', JSON.stringify({'user': idtf}));
+                        localStorage.setItem('infosUtilisateur', JSON.stringify({'user': data}));
                         this.router.navigate([this.returnUrl]);                    
                     } else {
                         this.alertService.error('Erreur de mot de passe');

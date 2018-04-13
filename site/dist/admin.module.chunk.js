@@ -957,7 +957,6 @@ var UtilisateurComponent = /** @class */ (function () {
         this.http.get(url)
             .map(function (response) { return response.json(); })
             .subscribe(function (data) {
-            console.log(data);
             _this.utilisateurs = data;
             _this.utilisateursCharger = (data.length > 0) ? true : false;
         });
