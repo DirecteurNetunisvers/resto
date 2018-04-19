@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParallaxScrollModule } from 'ng2-parallaxscroll';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 
 // import { PagesModule } from './pages/pages.module';
@@ -69,7 +71,9 @@ import { BoissonComponent } from './pages/boisson/boisson.component';
     HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCZeDurG5gamvy7AGTl-zerIuq-kzoNrRc'
-    })
+    }),
+    ParallaxScrollModule,
+    Ng2PageScrollModule    
   ],
   providers: [
     AuthGuardService,

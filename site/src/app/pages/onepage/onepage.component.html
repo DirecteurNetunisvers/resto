@@ -9,8 +9,8 @@
 				<div class="row">
 					<div class="col-md-4">
 						<a 
-							class="pull-left"
-							(click)="scrollTo('#s'+1, '#v-scrollable')"
+							class="pull-left k"
+							(click)="goTo('#home')"
 						>
 							Accueil
 						</a>						
@@ -18,7 +18,7 @@
 					<div class="col-md-4">
 						<a 
 							class="text-center"
-							(click)="scrollTo('#s'+2, '#v-scrollable')"
+							(click)="goTo('#pizza')"
 						>
 							Notre carte
 						</a>
@@ -26,7 +26,7 @@
 					<div class="col-md-4">
 						<a 
 							class="pull-right"
-							(click)="scrollTo('#s'+3, '#v-scrollable')"
+							(click)="goTo('#boisson')"
 						>
 							Horaires & contact
 						</a>
@@ -35,11 +35,24 @@
 			</div>
 			<div class="col-md-2">
 				<a 
-					routerLink="/admin/dashboard" 
-					class="btn btn-success pull-right"
-					style="background: green; border: 1px solid green;" 
+					routerLink="/"				 
 				>
-					Admninstration
+					<img src="assets/images/logo/logo_fb.png">
+				</a>
+				<a 
+					routerLink="/"					 
+				>
+					<img src="assets/images/logo/logo_instagram.png">
+				</a>
+				<a 
+					routerLink="/"					 
+				>
+					<img src="assets/images/logo/logo-o_o.png">
+				</a>
+				<a 
+					routerLink="/"					 
+				>
+					<img src="assets/images/logo/logo_etoil.png">
 				</a>
 			</div>				
 		</div>
@@ -47,61 +60,52 @@
 </div>
 <!-- Fin menu -->
 
-<div 
-	id="v-scrollable" 
-	class="scrollable section"
-	ng2-scrollable (elementVisible)="scrollEvent()"
->
-	<div id="s1">
-		<app-home></app-home>
-	</div>
-	<div class="container">	
-		<div class="row">
-			<div class="col-md-12">
-				<h3 
-					class="font_3" 
-					style="line-height:0.9em; text-align:center;"
-				>
-					<span class="color_32">
-						<span style="font-family:marck script,cursive;">
-							Welcome chez Gusty pizza
-						</span>
-					</span>
-				</h3>
-				<h2 
-					class="font_2" 
-					style="font-size:42px; line-height:0.9em; text-align:center;"
-				>
+<div id="home">
+	<app-home></app-home>
+</div>
+<div class="container">	
+	<div class="row">
+		<div class="col-md-12">
+			<h3 
+				class="font_3" 
+				style="line-height:0.9em; text-align:center; margin-top: 50px;"
+			>
+				<span class="color_32">
 					<span style="font-family:marck script,cursive;">
-						<span style="font-size:42px;">Qui nous sommes&nbsp;</span>
+						Welcome chez Pizza Hut
 					</span>
-				</h2>
-				<h2 class="font_2" style="font-size:42px; text-align:center;">
-					<span style="font-family:marck script,cursive;">
-						<span style="font-size:42px;">
-							<span class="wixGuard">​</span>
-						</span>
+				</span>
+			</h3>
+			<h2 
+				class="font_2" 
+				style="font-size:42px; line-height:0.9em; text-align:center;"
+			>
+				<span style="font-family:marck script,cursive;">
+					<span style="font-size:42px;">Qui nous sommes&nbsp;</span>
+				</span>
+			</h2>
+			<h2 class="font_2" style="font-size:42px; text-align:center;">
+				<span style="font-family:marck script,cursive;">
+					<span style="font-size:42px;">
+						<span class="wixGuard">​</span>
 					</span>
-				</h2>
-				<p class="font_8" style="text-align:center;">
-					<span style="font-family:marck script,cursive;">
-						The people, food and the prime locations make Rodich the perfect place good friends &amp; family to come together and have great time. Everytime you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area.
-					</span>
-				</p>			
-			</div>
+				</span>
+			</h2>
+			<p class="font_8" style="text-align:center;">
+				<span style="font-family:marck script,cursive;">
+					The people, food and the prime locations make Rodich the perfect place good friends &amp; family to come together and have great time. Everytime you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area.
+				</span>
+			</p>			
 		</div>
 	</div>
-
-	<div id="s2">
-		<app-pizza></app-pizza>
-	</div>
-	<div style="background: url('https://static.wixstatic.com/media/b4e25c281aea4e87975c95fa744211ee.jpg/v1/fill/w_1299,h_347,al_c,q_85,usm_0.66_1.00_0.01/b4e25c281aea4e87975c95fa744211ee.webp'); height: 300px; margin-bottom: 50px;">
-	</div>		
-	<app-boisson></app-boisson>
-	<div style="background: url('https://static.wixstatic.com/media/4654e9_86c8a4a5e93140e98e009e32c9418f03~mv2_d_1920_1280_s_2.jpg/v1/fill/w_1299,h_400,al_c,q_85,usm_0.66_1.00_0.01/4654e9_86c8a4a5e93140e98e009e32c9418f03~mv2_d_1920_1280_s_2.webp'); height: 300px; margin-bottom: 50px;">
-	</div>	
-
-	<div id="s3">
-		<app-contact></app-contact>
-	</div>
 </div>
+
+<div id="pizza">
+	<app-pizza></app-pizza>
+</div>
+
+<div id="boisson">
+	<app-boisson></app-boisson>
+</div>
+
+<app-contact></app-contact>
