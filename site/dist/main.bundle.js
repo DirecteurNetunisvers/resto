@@ -58,8 +58,8 @@ var AuthGuardService = /** @class */ (function () {
         return false;
     };
     AuthGuardService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */]])
     ], AuthGuardService);
     return AuthGuardService;
 }());
@@ -120,7 +120,7 @@ var AlertComponent = /** @class */ (function () {
         this.alertService.getMessage().subscribe(function (message) { _this.message = message; });
     };
     AlertComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             // tslint:disable-next-line:component-selector
             selector: 'alert',
             template: __webpack_require__("../../../../../src/app/_directives/alert/alert.component.html"),
@@ -184,7 +184,7 @@ var AdminHeaderComponent = /** @class */ (function () {
         this.user = user.user;
     };
     AdminHeaderComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             // tslint:disable-next-line:component-selector
             selector: 'admin-header',
             template: __webpack_require__("../../../../../src/app/_layout/admin-header/admin-header.component.html"),
@@ -246,7 +246,7 @@ var AdminLayoutComponent = /** @class */ (function () {
     AdminLayoutComponent.prototype.ngOnInit = function () {
     };
     AdminLayoutComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-admin-layout',
             template: __webpack_require__("../../../../../src/app/_layout/admin-layout/admin-layout.component.html"),
             styles: [__webpack_require__("../../../../../src/app/_layout/admin-layout/admin-layout.component.css")]
@@ -314,13 +314,13 @@ var AdminSidebarComponent = /** @class */ (function () {
         this.router.navigate(['/']);
     };
     AdminSidebarComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             // tslint:disable-next-line:component-selector
             selector: 'admin-sidebar',
             template: __webpack_require__("../../../../../src/app/_layout/admin-sidebar/admin-sidebar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/_layout/admin-sidebar/admin-sidebar.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */]])
     ], AdminSidebarComponent);
     return AdminSidebarComponent;
 }());
@@ -350,7 +350,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/_layout/site-footer/site-footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <footer class=\"footer\" style=\"position: relative;\">\n\t\t© 2018 - Tous droits réservés - Création \n\t\t<a href=\"https://www.kook-agency.fr/\" target=\"blank\" title=\"Création Site Internet\">kook-agency.fr\n\t\t</a>\t    \t\n    </footer>\n</div>"
+module.exports = "<div class=\"container\">\n    <footer class=\"footer\" style=\"position: relative;\">\n\t\t© 2018 - KOOK AGENCY\n\t\t<a routerLink=\"/admin/dashboard\" title=\"Création Site Internet\">kook-agency.fr\n\t\t</a>\t    \t\n    </footer>\n</div>"
 
 /***/ }),
 
@@ -376,7 +376,7 @@ var SiteFooterComponent = /** @class */ (function () {
     SiteFooterComponent.prototype.ngOnInit = function () {
     };
     SiteFooterComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'site-footer',
             template: __webpack_require__("../../../../../src/app/_layout/site-footer/site-footer.component.html"),
             styles: [__webpack_require__("../../../../../src/app/_layout/site-footer/site-footer.component.css")]
@@ -437,7 +437,7 @@ var SiteHeaderComponent = /** @class */ (function () {
     SiteHeaderComponent.prototype.ngOnInit = function () {
     };
     SiteHeaderComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             // tslint:disable-next-line:component-selector
             selector: 'site-header',
             template: __webpack_require__("../../../../../src/app/_layout/site-header/site-header.component.html"),
@@ -499,7 +499,7 @@ var SiteLayoutComponent = /** @class */ (function () {
     SiteLayoutComponent.prototype.ngOnInit = function () {
     };
     SiteLayoutComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-site-layout',
             template: __webpack_require__("../../../../../src/app/_layout/site-layout/site-layout.component.html"),
             styles: [__webpack_require__("../../../../../src/app/_layout/site-layout/site-layout.component.css")]
@@ -541,7 +541,7 @@ var AlertService = /** @class */ (function () {
         this.keepAfterNavigationChange = false;
         // clear alert message on route change
         router.events.subscribe(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationStart */]) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["e" /* NavigationStart */]) {
                 if (_this.keepAfterNavigationChange) {
                     // only keep for a single location change
                     _this.keepAfterNavigationChange = false;
@@ -567,8 +567,8 @@ var AlertService = /** @class */ (function () {
         return this.subject.asObservable();
     };
     AlertService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */]])
     ], AlertService);
     return AlertService;
 }());
@@ -609,7 +609,7 @@ var AuthenticationService = /** @class */ (function () {
         localStorage.removeItem('accesUtilisateur');
     };
     AuthenticationService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], AuthenticationService);
     return AuthenticationService;
@@ -667,7 +667,7 @@ var UsersService = /** @class */ (function () {
         return this.http.post('http://jsonplaceholder.typicode.com/users', user);
     };
     UsersService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], UsersService);
     return UsersService;
@@ -720,7 +720,7 @@ var AppComponent = /** @class */ (function () {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -745,31 +745,35 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__layout_site_layout_site_layout_component__ = __webpack_require__("../../../../../src/app/_layout/site-layout/site-layout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__layout_admin_layout_admin_layout_component__ = __webpack_require__("../../../../../src/app/_layout/admin-layout/admin-layout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__layout_admin_header_admin_header_component__ = __webpack_require__("../../../../../src/app/_layout/admin-header/admin-header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__layout_site_footer_site_footer_component__ = __webpack_require__("../../../../../src/app/_layout/site-footer/site-footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__layout_site_header_site_header_component__ = __webpack_require__("../../../../../src/app/_layout/site-header/site-header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home_component__ = __webpack_require__("../../../../../src/app/pages/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_pizza_pizza_component__ = __webpack_require__("../../../../../src/app/pages/pizza/pizza.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__layout_admin_sidebar_admin_sidebar_component__ = __webpack_require__("../../../../../src/app/_layout/admin-sidebar/admin-sidebar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__directives_alert_alert_component__ = __webpack_require__("../../../../../src/app/_directives/alert/alert.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_index__ = __webpack_require__("../../../../../src/app/_services/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__auth_auth_guard_service__ = __webpack_require__("../../../../../src/app/_auth/auth-guard.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_table_users_service__ = __webpack_require__("../../../../../src/app/_services/table/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_contact_contact_component__ = __webpack_require__("../../../../../src/app/pages/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_onepage_onepage_component__ = __webpack_require__("../../../../../src/app/pages/onepage/onepage.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_boisson_boisson_component__ = __webpack_require__("../../../../../src/app/pages/boisson/boisson.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_parallaxscroll__ = __webpack_require__("../../../../ng2-parallaxscroll/modules/ng2-parallaxscroll.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ng2_page_scroll__ = __webpack_require__("../../../../ng2-page-scroll/ng2-page-scroll.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_routing__ = __webpack_require__("../../../../../src/app/app.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__layout_site_layout_site_layout_component__ = __webpack_require__("../../../../../src/app/_layout/site-layout/site-layout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__layout_admin_layout_admin_layout_component__ = __webpack_require__("../../../../../src/app/_layout/admin-layout/admin-layout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__layout_admin_header_admin_header_component__ = __webpack_require__("../../../../../src/app/_layout/admin-header/admin-header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__layout_site_footer_site_footer_component__ = __webpack_require__("../../../../../src/app/_layout/site-footer/site-footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__layout_site_header_site_header_component__ = __webpack_require__("../../../../../src/app/_layout/site-header/site-header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home_component__ = __webpack_require__("../../../../../src/app/pages/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_pizza_pizza_component__ = __webpack_require__("../../../../../src/app/pages/pizza/pizza.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__layout_admin_sidebar_admin_sidebar_component__ = __webpack_require__("../../../../../src/app/_layout/admin-sidebar/admin-sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__directives_alert_alert_component__ = __webpack_require__("../../../../../src/app/_directives/alert/alert.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_index__ = __webpack_require__("../../../../../src/app/_services/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__auth_auth_guard_service__ = __webpack_require__("../../../../../src/app/_auth/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_table_users_service__ = __webpack_require__("../../../../../src/app/_services/table/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_contact_contact_component__ = __webpack_require__("../../../../../src/app/pages/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_onepage_onepage_component__ = __webpack_require__("../../../../../src/app/pages/onepage/onepage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_boisson_boisson_component__ = __webpack_require__("../../../../../src/app/pages/boisson/boisson.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -807,43 +811,45 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__layout_site_layout_site_layout_component__["a" /* SiteLayoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__layout_admin_layout_admin_layout_component__["a" /* AdminLayoutComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_pizza_pizza_component__["a" /* PizzaComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__layout_admin_header_admin_header_component__["a" /* AdminHeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__layout_site_footer_site_footer_component__["a" /* SiteFooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__layout_site_header_site_header_component__["a" /* SiteHeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__layout_admin_sidebar_admin_sidebar_component__["a" /* AdminSidebarComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__directives_alert_alert_component__["a" /* AlertComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__pages_contact_contact_component__["a" /* ContactComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__pages_onepage_onepage_component__["a" /* OnepageComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__pages_boisson_boisson_component__["a" /* BoissonComponent */]
+                __WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__layout_site_layout_site_layout_component__["a" /* SiteLayoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__layout_admin_layout_admin_layout_component__["a" /* AdminLayoutComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_pizza_pizza_component__["a" /* PizzaComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__layout_admin_header_admin_header_component__["a" /* AdminHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__layout_site_footer_site_footer_component__["a" /* SiteFooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__layout_site_header_site_header_component__["a" /* SiteHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__layout_admin_sidebar_admin_sidebar_component__["a" /* AdminSidebarComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__directives_alert_alert_component__["a" /* AlertComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__pages_contact_contact_component__["a" /* ContactComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__pages_onepage_onepage_component__["a" /* OnepageComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__pages_boisson_boisson_component__["a" /* BoissonComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 // PagesModule,
-                __WEBPACK_IMPORTED_MODULE_7__app_routing__["a" /* routing */],
+                __WEBPACK_IMPORTED_MODULE_9__app_routing__["a" /* routing */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_5__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyCZeDurG5gamvy7AGTl-zerIuq-kzoNrRc'
-                })
+                }),
+                __WEBPACK_IMPORTED_MODULE_7_ng2_parallaxscroll__["a" /* ParallaxScrollModule */],
+                __WEBPACK_IMPORTED_MODULE_8_ng2_page_scroll__["a" /* Ng2PageScrollModule */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_19__auth_auth_guard_service__["a" /* AuthGuardService */],
-                __WEBPACK_IMPORTED_MODULE_18__services_index__["a" /* AlertService */],
-                __WEBPACK_IMPORTED_MODULE_18__services_index__["b" /* AuthenticationService */],
-                __WEBPACK_IMPORTED_MODULE_20__services_table_users_service__["a" /* UsersService */],
+                __WEBPACK_IMPORTED_MODULE_21__auth_auth_guard_service__["a" /* AuthGuardService */],
+                __WEBPACK_IMPORTED_MODULE_20__services_index__["a" /* AlertService */],
+                __WEBPACK_IMPORTED_MODULE_20__services_index__["b" /* AuthenticationService */],
+                __WEBPACK_IMPORTED_MODULE_22__services_table_users_service__["a" /* UsersService */],
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -909,7 +915,7 @@ var appRoutes = [
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
-var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["d" /* RouterModule */].forRoot(appRoutes);
+var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["g" /* RouterModule */].forRoot(appRoutes);
 
 
 /***/ }),
@@ -1016,14 +1022,14 @@ var LoginComponent = /** @class */ (function () {
         });
     };
     LoginComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             // selector: 'app-login',
             moduleId: module.i.toString(),
             template: __webpack_require__("../../../../../src/app/login/login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */],
             __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */],
             __WEBPACK_IMPORTED_MODULE_3__services_alert_service__["a" /* AlertService */]])
     ], LoginComponent);
@@ -1037,12 +1043,13 @@ var LoginComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/pages/boisson/boisson.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "#overlay {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0,0,0,0.5);\n    z-index: 2;\n    cursor: pointer;\n}\n\n#text{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    font-size: 20px;\n    color: white;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}", ""]);
+exports.push([module.i, "#overlay {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0,0,0,0.5);\n    z-index: 2;\n    cursor: pointer;\n}\n\n#text{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    font-size: 20px;\n    color: white;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n\n.parallax-boisson {\n    background: url(" + escape(__webpack_require__("../../../../../src/app/pages/boisson/boisson.webp")) + ") no-repeat center center fixed;\n    height: 300px;\n    background-size: cover;\n}", ""]);
 
 // exports
 
@@ -1055,7 +1062,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/boisson/boisson.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <div id=\"overlay\" *ngIf=\"!boissonsCharger;\">\n        <div id=\"text\">Chargement des boissons en cours...</div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <h1>NOS BOISSONS</h1>\n        \t<hr style=\"border-bottom: 3px solid rgba(153, 153, 153, 1) !important;\">\n        </div>\n    </div>\n\t\n    <div class=\"row\">\n    \t<div class=\"col-md-8\">\n    \t\t\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>33cl</strong></p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>50cl</strong></p>\n    \t</div>\n    </div>\t\n\n    <div class=\"row\" *ngFor=\"let i of boissons\">\n    \t<div class=\"col-md-8\">\n    \t\t<p>{{i.nom | uppercase}}</p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.pm}}</p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.gm}}</p>\n    \t</div>\n    </div>\t\n</div>\n"
+module.exports = "<div class=\"container\">\n    <div id=\"overlay\" *ngIf=\"!boissonsCharger;\">\n        <div id=\"text\">Chargement des boissons en cours...</div>\n    </div>\n    <div class=\"row\" style=\"margin-top: 40px;\">\n        <div class=\"col-md-4\">\n            <h1>NOS BOISSONS</h1>\n        \t<hr style=\"border-bottom: 3px solid rgba(153, 153, 153, 1) !important;\">\n        </div>\n    </div>\n\t\n    <div class=\"row\">\n    \t<div class=\"col-md-8\">\n    \t\t\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>33cl</strong></p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>50cl</strong></p>\n    \t</div>\n    </div>\t\n\n    <div class=\"row\" *ngFor=\"let i of boissons\">\n    \t<div class=\"col-md-8\">\n    \t\t<p>{{i.nom | uppercase}}</p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.pm}}</p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.gm}}</p>\n    \t</div>\n    </div>\t\n</div>\n\n<div parallax class=\"parallax-boisson\" [config]=\"{axis: X, speed: -.0}\">\n</div>"
 
 /***/ }),
 
@@ -1095,7 +1102,7 @@ var BoissonComponent = /** @class */ (function () {
         });
     };
     BoissonComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-boisson',
             template: __webpack_require__("../../../../../src/app/pages/boisson/boisson.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pages/boisson/boisson.component.css")]
@@ -1106,6 +1113,13 @@ var BoissonComponent = /** @class */ (function () {
 }());
 
 
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/boisson/boisson.webp":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "boisson.20d5e156c4d79e1bb42d.webp";
 
 /***/ }),
 
@@ -1130,7 +1144,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\t\n\t<br><br><br>\n\t<div class=\"row\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<h5 style=\"text-align:center;\" class=\"font_5\">\n\t\t\t\t<span style=\"letter-spacing:0.08em;\">NOUS VOUS ATTENDONS !</span>\n\t\t\t</h5>\n\t\t</div>\n\t</div>\n\n\t<br><br>\n\t<div class=\"row\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<p style=\"text-align:center;\" class=\"font_7\">\n\t\t\t\tADRESSE\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">1 rue du Château</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">75001 Paris, France</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">\n\t\t\t\t\t<object height=\"0\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"auto-generated-link\" \n\t\t\t\t\t\t\tdata-auto-recognition=\"true\" \n\t\t\t\t\t\t\tdata-content=\"info@monsite.com\" \n\t\t\t\t\t\t\thref=\"mailto:info@monsite.com\" \n\t\t\t\t\t\t\tdata-type=\"mail\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tinfo@monsite.com\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</object> \\\\ Tel: 01 23 45 67 89\n\t\t\t\t</span>\n\t\t\t</p>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<p style=\"text-align:center;\" class=\"font_7\">\n\t\t\t\tHEURES D'OUVERTURE\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">lundi – vendredi 07h00 – 22h00</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">samedi 09h00 – 22h00</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">dimanche 08h00 –23h00</span>\n\t\t\t</p>\n\t\t</div>\n\t</div>\n\n\t<br><br>\n\t<!-- this creates a google map on the page with the given lat/lng from -->\n\t<!-- the component as the initial center of the map: -->\n\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n\t</agm-map>\n\n</div>\n\n\n"
+module.exports = "<div class=\"container-fluid\">\n\t\n\t<br><br><br>\n\t<div class=\"row\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<h5 style=\"text-align:center;\" class=\"font_5\">\n\t\t\t\t<span style=\"letter-spacing:0.08em;\">NOUS VOUS ATTENDONS !</span>\n\t\t\t</h5>\n\t\t</div>\n\t</div>\n\n\t<br><br>\n\t<div class=\"row\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<p style=\"text-align:center;\" class=\"font_7\">\n\t\t\t\tADRESSE\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">1 rue du Château</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">75001 Paris, France</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">\n\t\t\t\t\t<object height=\"0\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"auto-generated-link\" \n\t\t\t\t\t\t\tdata-auto-recognition=\"true\" \n\t\t\t\t\t\t\tdata-content=\"info@monsite.com\" \n\t\t\t\t\t\t\thref=\"mailto:info@monsite.com\" \n\t\t\t\t\t\t\tdata-type=\"mail\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tinfo@monsite.com\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</object> \\\\ Tel: 01 23 45 67 89\n\t\t\t\t</span>\n\t\t\t</p>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<p style=\"text-align:center;\" class=\"font_7\">\n\t\t\t\tHEURES D'OUVERTURE\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">lundi – vendredi 07h00 – 22h00</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">samedi 09h00 – 22h00</span>\n\t\t\t</p>\n\n\t\t\t<p style=\"text-align:center; line-height:1.5em;\" class=\"font_8\">\n\t\t\t\t<span style=\"line-height:1.5em;\">dimanche 08h00 –23h00</span>\n\t\t\t</p>\n\t\t</div>\n\t</div>\n</div>\n\n<br><br>\n<!-- this creates a google map on the page with the given lat/lng from -->\n<!-- the component as the initial center of the map: -->\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map>\n\n\n"
 
 /***/ }),
 
@@ -1158,7 +1172,7 @@ var ContactComponent = /** @class */ (function () {
     ContactComponent.prototype.ngOnInit = function () {
     };
     ContactComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-contact',
             template: __webpack_require__("../../../../../src/app/pages/contact/contact.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pages/contact/contact.component.css")]
@@ -1175,12 +1189,13 @@ var ContactComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/pages/home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".commander {\n    text-transform: uppercase;\n    height: 40px;\n    border: 1px solid;\n    width: 150px;\n    margin: auto;\n    padding-top: 6px;\n    cursor: pointer;\n\tbackground: black;\n\tcolor: white;    \t\n}\n\n.commander:hover {\n\tbackground: white;\n\tcolor: black;\n\n}", ""]);
+exports.push([module.i, ".commander {\n    text-transform: uppercase;\n    height: 40px;\n    border: 1px solid;\n    width: 150px;\n    margin: auto;\n    padding-top: 6px;\n    cursor: pointer;\n\tbackground: black;\n\tcolor: white;    \t\n}\n\n.commander:hover {\n\tbackground: white;\n\tcolor: black;\n}\n\n#home {\n    padding-top: 60px;\n}\n\n.parallax-home {\n    background: url(" + escape(__webpack_require__("../../../../../src/app/pages/home/slider_template_1.jpg")) + ") no-repeat center center fixed;\n    background-size: cover;\n}\n\n.img_accueil_centre {\n\n}\n\n.content_accueil {\n    text-align: center;\n    padding-top: 140px;\n}", ""]);
 
 // exports
 
@@ -1193,7 +1208,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <br><br><br>\n    <div class=\"row\">\n        <div class=\"col-md-12\" style=\"text-align: center; margin-top: 5px; \">\n            <img src=\"https://static.wixstatic.com/media/4654e9_120d56e9ef664b3aac04e662aa42f3c3~mv2.png/v1/fill/w_382,h_390,al_c,usm_0.66_1.00_0.01/4654e9_120d56e9ef664b3aac04e662aa42f3c3~mv2.png\">\n        </div>\n    </div>\n    <br><br>\n\n    <div class=\"row\">\n        <div class=\"col-md-12\" style=\"text-align: center;\">\n            <div class=\"commander\">\n                Notre carte\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div parallax class=\"parallax-home\" [config]=\"{axis: X, speed: -.2}\">\n    <div class=\"content_accueil\">\n        <img class=\"img_accueil_centre\" src=\"https://static.wixstatic.com/media/4654e9_120d56e9ef664b3aac04e662aa42f3c3~mv2.png/v1/fill/w_382,h_390,al_c,usm_0.66_1.00_0.01/4654e9_120d56e9ef664b3aac04e662aa42f3c3~mv2.png\">\n\n        <br><br><br>\n        <div class=\"commander\">\n            Notre carte\n        </div>\n        <br><br><br>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1219,7 +1234,7 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.ngOnInit = function () {
     };
     HomeComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-home',
             template: __webpack_require__("../../../../../src/app/pages/home/home.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pages/home/home.component.css")]
@@ -1233,6 +1248,20 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/home/slider_template_1.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "slider_template_1.cd3b8393b4dd1ddc5304.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/onepage/boisson.webp":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "boisson.20d5e156c4d79e1bb42d.webp";
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/onepage/onepage.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1242,7 +1271,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* Styles go here */\n* { -webkit-box-sizing: border-box; box-sizing: border-box};\nlegend {background-color: #fff};\nul {list-style: none}\nul li {display: inline-block; border: 1px solid #999; padding: 10px; cursor: pointer;}\nul li.current { background: #333; color: #fff}\n.scrollable { \n  height: 200px; \n  border: 1px solid #999; \n  position: relative;\n}\n/*.scrollable > div:nth-child(odd) { background-color: #ccc}*/\nul.window {\n  position: fixed; \n  top: 0; \n  left: 0; \n  background: yellow; \n  z-index: 1;\n}\nul.window li {display: block; }\n.scrollable.section {\n  overflow:auto;\n  height: 600px;\n}\n.horizontal {\n  height: 100px;\n  width: 100%;\n  max-width: 450px;\n  white-space: nowrap;\n  overflow-y: hidden !important;\n}\n.horizontal > div {\n  border: 1px solid #666;\n  width: 200px;\n  height: 800px;\n  display: inline-block;\n  text-align: center;\n}\n.menu {\n    height: 60px;\n    background: #292b2c;\n    padding-top: 15px;\n    z-index: 9999;\n    width: 100%;    \n}\n.menu a {\n    cursor: pointer;\n    color: white;\n}\n.menu a:hover {\n    cursor: pointer;\n    color: white;\n}\n#s1 {\n    background: url(" + escape(__webpack_require__("../../../../../src/app/pages/slider_template_1.jpg")) + ");\n    background-size: cover;\n    height: 600px;\n}\n#s2 {\n  height: auto;\n}\n#s3 {\n  height: auto;\n}\n/*Pour la section accueil*/\n.txtNew {\n    word-wrap: break-word;\n    text-align: start;\n    pointer-events: none;\n}\n.txtNew h3 {\n    margin: 0;\n    line-height: normal;\n    letter-spacing: normal;\n}\n.color_32 {\n    color: #FFC880;\n}\n.font_3 {\n    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;\n    color: #222222;\n}\n/*Fin pour la section accueil*/", ""]);
+exports.push([module.i, "/* Styles go here */\n* { -webkit-box-sizing: border-box; box-sizing: border-box};\nlegend {background-color: #fff};\nul {list-style: none}\nul li {display: inline-block; border: 1px solid #999; padding: 10px; cursor: pointer;}\nul li.current { background: #333; color: #fff}\nul.window {\n  position: fixed; \n  top: 0; \n  left: 0; \n  background: yellow; \n  z-index: 1;\n}\nul.window li {display: block; }\n.horizontal {\n  height: 100px;\n  width: 100%;\n  max-width: 450px;\n  white-space: nowrap;\n  overflow-y: hidden !important;\n}\n.horizontal > div {\n  border: 1px solid #666;\n  width: 200px;\n  height: 800px;\n  display: inline-block;\n  text-align: center;\n}\n.menu {\n    height: 60px;\n    background: #292b2c;\n    padding-top: 15px;\n    z-index: 9999;\n    width: 100%;\n    position: fixed;\n}\n.menu a {\n    cursor: pointer;\n    color: white;\n}\n.menu a:hover {\n    cursor: pointer;\n    color: white;\n}\n#pizza {\n  height: auto;\n  padding-top: 60px;\n}\n#boisson {\n  height: auto;\n}\n.parallax-boisson {\n    background-image: url(" + escape(__webpack_require__("../../../../../src/app/pages/onepage/boisson.webp")) + ") no-repeat center center fixed;\n    height: 300px;\n    background-size: cover;\n}\n/*Pour la section accueil*/\n.txtNew {\n    word-wrap: break-word;\n    text-align: start;\n    pointer-events: none;\n}\n.txtNew h3 {\n    margin: 0;\n    line-height: normal;\n    letter-spacing: normal;\n}\n.color_32 {\n    color: #FFC880;\n}\n.font_3 {\n    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;\n    color: #222222;\n}\n/*Fin pour la section accueil*/", ""]);
 
 // exports
 
@@ -1255,7 +1284,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/onepage/onepage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Menu -->\n<div class=\"menu\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-md-8\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"pull-left\"\n\t\t\t\t\t\t\t(click)=\"scrollTo('#s'+1, '#v-scrollable')\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tAccueil\n\t\t\t\t\t\t</a>\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"text-center\"\n\t\t\t\t\t\t\t(click)=\"scrollTo('#s'+2, '#v-scrollable')\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tNotre carte\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"pull-right\"\n\t\t\t\t\t\t\t(click)=\"scrollTo('#s'+3, '#v-scrollable')\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tHoraires & contact\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-2\">\n\t\t\t\t<a \n\t\t\t\t\trouterLink=\"/admin/dashboard\" \n\t\t\t\t\tclass=\"btn btn-success pull-right\"\n\t\t\t\t\tstyle=\"background: green; border: 1px solid green;\" \n\t\t\t\t>\n\t\t\t\t\tAdmninstration\n\t\t\t\t</a>\n\t\t\t</div>\t\t\t\t\n\t\t</div>\n\t</div>\n</div>\n<!-- Fin menu -->\n\n<div \n\tid=\"v-scrollable\" \n\tclass=\"scrollable section\"\n\tng2-scrollable (elementVisible)=\"scrollEvent()\"\n>\n\t<div id=\"s1\">\n\t\t<app-home></app-home>\n\t</div>\n\t<div class=\"container\">\t\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<h3 \n\t\t\t\t\tclass=\"font_3\" \n\t\t\t\t\tstyle=\"line-height:0.9em; text-align:center;\"\n\t\t\t\t>\n\t\t\t\t\t<span class=\"color_32\">\n\t\t\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t\t\tWelcome chez Gusty pizza\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</span>\n\t\t\t\t</h3>\n\t\t\t\t<h2 \n\t\t\t\t\tclass=\"font_2\" \n\t\t\t\t\tstyle=\"font-size:42px; line-height:0.9em; text-align:center;\"\n\t\t\t\t>\n\t\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t\t<span style=\"font-size:42px;\">Qui nous sommes&nbsp;</span>\n\t\t\t\t\t</span>\n\t\t\t\t</h2>\n\t\t\t\t<h2 class=\"font_2\" style=\"font-size:42px; text-align:center;\">\n\t\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t\t<span style=\"font-size:42px;\">\n\t\t\t\t\t\t\t<span class=\"wixGuard\">​</span>\n\t\t\t\t\t\t</span>\n\t\t\t\t\t</span>\n\t\t\t\t</h2>\n\t\t\t\t<p class=\"font_8\" style=\"text-align:center;\">\n\t\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t\tThe people, food and the prime locations make Rodich the perfect place good friends &amp; family to come together and have great time. Everytime you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area.\n\t\t\t\t\t</span>\n\t\t\t\t</p>\t\t\t\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<div id=\"s2\">\n\t\t<app-pizza></app-pizza>\n\t</div>\n\t<div style=\"background: url('https://static.wixstatic.com/media/b4e25c281aea4e87975c95fa744211ee.jpg/v1/fill/w_1299,h_347,al_c,q_85,usm_0.66_1.00_0.01/b4e25c281aea4e87975c95fa744211ee.webp'); height: 300px; margin-bottom: 50px;\">\n\t</div>\t\t\n\t<app-boisson></app-boisson>\n\t<div style=\"background: url('https://static.wixstatic.com/media/4654e9_86c8a4a5e93140e98e009e32c9418f03~mv2_d_1920_1280_s_2.jpg/v1/fill/w_1299,h_400,al_c,q_85,usm_0.66_1.00_0.01/4654e9_86c8a4a5e93140e98e009e32c9418f03~mv2_d_1920_1280_s_2.webp'); height: 300px; margin-bottom: 50px;\">\n\t</div>\t\n\n\t<div id=\"s3\">\n\t\t<app-contact></app-contact>\n\t</div>\n</div>"
+module.exports = "<!-- Menu -->\n<div class=\"menu\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-2\">\n\t\t\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-md-8\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"pull-left k\"\n\t\t\t\t\t\t\t(click)=\"goTo('#home')\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tAccueil\n\t\t\t\t\t\t</a>\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"text-center\"\n\t\t\t\t\t\t\t(click)=\"goTo('#pizza')\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tNotre carte\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t<a \n\t\t\t\t\t\t\tclass=\"pull-right\"\n\t\t\t\t\t\t\t(click)=\"goTo('#boisson')\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\tHoraires & contact\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-2\">\n\t\t\t\t<a \n\t\t\t\t\trouterLink=\"/\"\t\t\t\t \n\t\t\t\t>\n\t\t\t\t\t<img src=\"assets/images/logo/logo_fb.png\">\n\t\t\t\t</a>\n\t\t\t\t<a \n\t\t\t\t\trouterLink=\"/\"\t\t\t\t\t \n\t\t\t\t>\n\t\t\t\t\t<img src=\"assets/images/logo/logo_instagram.png\">\n\t\t\t\t</a>\n\t\t\t\t<a \n\t\t\t\t\trouterLink=\"/\"\t\t\t\t\t \n\t\t\t\t>\n\t\t\t\t\t<img src=\"assets/images/logo/logo-o_o.png\">\n\t\t\t\t</a>\n\t\t\t\t<a \n\t\t\t\t\trouterLink=\"/\"\t\t\t\t\t \n\t\t\t\t>\n\t\t\t\t\t<img src=\"assets/images/logo/logo_etoil.png\">\n\t\t\t\t</a>\n\t\t\t</div>\t\t\t\t\n\t\t</div>\n\t</div>\n</div>\n<!-- Fin menu -->\n\n<div id=\"home\">\n\t<app-home></app-home>\n</div>\n<div class=\"container\">\t\n\t<div class=\"row\">\n\t\t<div class=\"col-md-12\">\n\t\t\t<h3 \n\t\t\t\tclass=\"font_3\" \n\t\t\t\tstyle=\"line-height:0.9em; text-align:center; margin-top: 50px;\"\n\t\t\t>\n\t\t\t\t<span class=\"color_32\">\n\t\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t\tWelcome chez Pizza Hut\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t</h3>\n\t\t\t<h2 \n\t\t\t\tclass=\"font_2\" \n\t\t\t\tstyle=\"font-size:42px; line-height:0.9em; text-align:center;\"\n\t\t\t>\n\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t<span style=\"font-size:42px;\">Qui nous sommes&nbsp;</span>\n\t\t\t\t</span>\n\t\t\t</h2>\n\t\t\t<h2 class=\"font_2\" style=\"font-size:42px; text-align:center;\">\n\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\t<span style=\"font-size:42px;\">\n\t\t\t\t\t\t<span class=\"wixGuard\">​</span>\n\t\t\t\t\t</span>\n\t\t\t\t</span>\n\t\t\t</h2>\n\t\t\t<p class=\"font_8\" style=\"text-align:center;\">\n\t\t\t\t<span style=\"font-family:marck script,cursive;\">\n\t\t\t\t\tThe people, food and the prime locations make Rodich the perfect place good friends &amp; family to come together and have great time. Everytime you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area.\n\t\t\t\t</span>\n\t\t\t</p>\t\t\t\n\t\t</div>\n\t</div>\n</div>\n\n<div id=\"pizza\">\n\t<app-pizza></app-pizza>\n</div>\n\n<div id=\"boisson\">\n\t<app-boisson></app-boisson>\n</div>\n\n<app-contact></app-contact>\n"
 
 /***/ }),
 
@@ -1265,8 +1294,8 @@ module.exports = "<!-- Menu -->\n<div class=\"menu\">\n\t<div class=\"container\
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OnepageComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_utils__ = __webpack_require__("../../../../ng2-utils/dist/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_utils__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__ = __webpack_require__("../../../../ng2-page-scroll/ng2-page-scroll.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1276,33 +1305,58 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
 
 
 var OnepageComponent = /** @class */ (function () {
-    // hid = 'h1'; wid='w1';
-    function OnepageComponent() {
-        this.id = 's1';
+    function OnepageComponent(pageScrollService, document) {
+        this.pageScrollService = pageScrollService;
+        this.document = document;
     }
-    OnepageComponent.prototype.ngOnInit = function () {
+    OnepageComponent.prototype.ngOnInit = function () { };
+    OnepageComponent.prototype.goToHome = function () {
+        var pageScrollInstance = __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["b" /* PageScrollInstance */].simpleInstance(this.document, '#home');
+        this.pageScrollService.start(pageScrollInstance);
     };
-    OnepageComponent.prototype.scrollTo = function (selector, parentSelector) {
-        var horizontal = false;
-        Object(__WEBPACK_IMPORTED_MODULE_1_ng2_utils__["scrollTo"])(selector, // scroll to this
-        parentSelector, // scroll within (null if window scrolling)
-        horizontal, // is it horizontal scrolling
-        0 // distance from top or left
-        );
+    ;
+    OnepageComponent.prototype.goTo = function (destination) {
+        var pageScrollInstance = __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["b" /* PageScrollInstance */].simpleInstance(this.document, destination);
+        this.pageScrollService.start(pageScrollInstance);
     };
-    OnepageComponent.prototype.scrollEvent = function () {
-        console.log('e');
+    ;
+    OnepageComponent.prototype.scrollSomewhereHorizontally = function () {
+        var pageScrollInstance = __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["b" /* PageScrollInstance */].newInstance({
+            document: this.document,
+            scrollTarget: '#targetToTheRight',
+            verticalScrolling: false
+        });
+        this.pageScrollService.start(pageScrollInstance);
     };
+    ;
+    OnepageComponent.prototype.goToHeadingInContainer = function () {
+        var pageScrollInstance = __WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["b" /* PageScrollInstance */].newInstance({
+            document: this.document,
+            scrollTarget: '.headingClass',
+            scrollingViews: [this.container.nativeElement]
+        });
+        this.pageScrollService.start(pageScrollInstance);
+    };
+    ;
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('container'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+    ], OnepageComponent.prototype, "container", void 0);
     OnepageComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-onepage',
             template: __webpack_require__("../../../../../src/app/pages/onepage/onepage.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pages/onepage/onepage.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* DOCUMENT */])),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ng2_page_scroll__["c" /* PageScrollService */], Object])
     ], OnepageComponent);
     return OnepageComponent;
 }());
@@ -1332,12 +1386,13 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/pizza/pizza.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__("../../../../css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".txtNew {\n    word-wrap: break-word;\n    text-align: start;\n    pointer-events: none;\n}\n\n.txtNew h3 {\n    margin: 0;\n    line-height: normal;\n    letter-spacing: normal;\n}\n\n.color_32 {\n    color: #FFC880;\n}\n\n.font_3 {\n    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;\n    color: #222222;\n}\n\n#overlay {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0,0,0,0.5);\n    z-index: 2;\n    cursor: pointer;\n}\n\n#text{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    font-size: 20px;\n    color: white;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}", ""]);
+exports.push([module.i, ".txtNew {\n    word-wrap: break-word;\n    text-align: start;\n    pointer-events: none;\n}\n\n.txtNew h3 {\n    margin: 0;\n    line-height: normal;\n    letter-spacing: normal;\n}\n\n.color_32 {\n    color: #FFC880;\n}\n\n.font_3 {\n    font: normal normal normal 58px/1.4em impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;\n    color: #222222;\n}\n\n#overlay {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0,0,0,0.5);\n    z-index: 2;\n    cursor: pointer;\n}\n\n#text{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    font-size: 20px;\n    color: white;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n\n.parallax-pizza {\n    background: url(" + escape(__webpack_require__("../../../../../src/app/pages/pizza/pizza.webp")) + ") no-repeat center center fixed;\n    height: 300px;\n    background-size: cover;\n}", ""]);
 
 // exports
 
@@ -1350,7 +1405,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/pizza/pizza.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <div id=\"overlay\" *ngIf=\"!pizzasCharger;\">\n        <div id=\"text\">Chargement des pizzas en cours...</div>\n    </div>    \n\t<br>\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <h1>NOS PIZZAS</h1>\n        \t<hr style=\"border-bottom: 3px solid rgba(153, 153, 153, 1) !important;\">\n        </div>\n    </div>\n\n    <div class=\"row\">\n    \t<div class=\"col-md-8\">\n    \t\t\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>Petite</strong></p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>Grande</strong></p>\n    \t</div>\n    </div>\t\n\n    <div class=\"row\" *ngFor=\"let i of pizza\">\n    \t<div class=\"col-md-8\">\n    \t\t<h3>{{i.nom | uppercase}}</h3>\n    \t\t<p>{{i.ingredient}}<p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.pm}}<p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.gm}}<p>\n    \t</div>\n    </div>\n</div>"
+module.exports = "<div class=\"container\">\n    <div id=\"overlay\" *ngIf=\"!pizzasCharger;\">\n        <div id=\"text\">Chargement des pizzas en cours...</div>\n    </div>    \n\t<br>\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <h1>NOS PIZZAS</h1>\n        \t<hr style=\"border-bottom: 3px solid rgba(153, 153, 153, 1) !important;\">\n        </div>\n    </div>\n\n    <div class=\"row\">\n    \t<div class=\"col-md-8\">\n    \t\t\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>Petite</strong></p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p><strong>Grande</strong></p>\n    \t</div>\n    </div>\t\n\n    <div class=\"row\" *ngFor=\"let i of pizza\">\n    \t<div class=\"col-md-8\">\n    \t\t<h3>{{i.nom | uppercase}}</h3>\n    \t\t<p>{{i.ingredient}}<p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.pm}}<p>\n    \t</div>\n    \t<div class=\"col-md-2\">\n    \t\t<p>{{i.gm}}<p>\n    \t</div>\n    </div>\n</div>\n\n<div parallax class=\"parallax-pizza\" [config]=\"{axis: X, speed: -.0}\">\n</div>"
 
 /***/ }),
 
@@ -1390,7 +1445,7 @@ var PizzaComponent = /** @class */ (function () {
         });
     };
     PizzaComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-pizza',
             template: __webpack_require__("../../../../../src/app/pages/pizza/pizza.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pages/pizza/pizza.component.css"), __webpack_require__("../../../../../src/app/pages/pizza/fonts-googleapis-component.css")]
@@ -1404,10 +1459,10 @@ var PizzaComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/pages/slider_template_1.jpg":
+/***/ "../../../../../src/app/pages/pizza/pizza.webp":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "slider_template_1.cd3b8393b4dd1ddc5304.jpg";
+module.exports = __webpack_require__.p + "pizza.577efe31ffac39c552c0.webp";
 
 /***/ }),
 
@@ -1484,14 +1539,14 @@ var RegisterComponent = /** @class */ (function () {
         });
     };
     RegisterComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             // selector: 'app-register',
             moduleId: module.i.toString(),
             template: __webpack_require__("../../../../../src/app/register/register.component.html"),
             styles: [__webpack_require__("../../../../../src/app/register/register.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["f" /* Router */],
             __WEBPACK_IMPORTED_MODULE_4__services_table_users_service__["a" /* UsersService */],
             __WEBPACK_IMPORTED_MODULE_3__services__["a" /* AlertService */]])
     ], RegisterComponent);
@@ -1532,7 +1587,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });

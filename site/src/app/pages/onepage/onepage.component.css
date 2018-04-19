@@ -5,14 +5,6 @@ ul {list-style: none}
 ul li {display: inline-block; border: 1px solid #999; padding: 10px; cursor: pointer;}
 ul li.current { background: #333; color: #fff}
 
-.scrollable { 
-  height: 200px; 
-  border: 1px solid #999; 
-  position: relative;
-}
-
-/*.scrollable > div:nth-child(odd) { background-color: #ccc}*/
-
 ul.window {
   position: fixed; 
   top: 0; 
@@ -23,10 +15,6 @@ ul.window {
 
 ul.window li {display: block; }
 
-.scrollable.section {
-  overflow:auto;
-  height: 600px;
-}
 
 .horizontal {
   height: 100px;
@@ -48,7 +36,8 @@ ul.window li {display: block; }
     background: #292b2c;
     padding-top: 15px;
     z-index: 9999;
-    width: 100%;    
+    width: 100%;
+    position: fixed;
 }
 
 .menu a {
@@ -61,20 +50,23 @@ ul.window li {display: block; }
     color: white;
 }
 
-#s1 {
-    background: url('./../slider_template_1.jpg');
+#pizza {
+  height: auto;
+  padding-top: 60px;
+}
+
+#boisson {
+  height: auto;
+}
+
+.parallax-boisson {
+    background-image: url('boisson.webp') no-repeat center center fixed;
+    height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    height: 600px;
 }
-
-#s2 {
-  height: auto;
-}
-
-#s3 {
-  height: auto;
-}
-
 /*Pour la section accueil*/
 .txtNew {
     word-wrap: break-word;
