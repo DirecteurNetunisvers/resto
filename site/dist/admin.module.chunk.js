@@ -314,6 +314,7 @@ var BoissonComponent = /** @class */ (function () {
         this.boissonToModifier = boisson;
     };
     BoissonComponent.prototype.onClickSubmit = function (data) {
+        var _this = this;
         var messageErreur = this.validationFomulaire(data);
         if (messageErreur) {
             alert(messageErreur);
@@ -321,14 +322,20 @@ var BoissonComponent = /** @class */ (function () {
         }
         var cpHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: cpHeaders });
-        var body = JSON.stringify(data);
         var url = __WEBPACK_IMPORTED_MODULE_5__config_host__["a" /* urlApi */] + '/menu/boisson/' + data.id;
-        console.log(this.headers);
-        return this.http.put(url, data, options).map(function (success) {
-            success.status;
-            console.log('resss');
-        })
-            .catch(this.handleError);
+        var dataToPut = {
+            nom: data.nom,
+            pm: data.pm,
+            gm: data.gm
+        };
+        var body = JSON.stringify(dataToPut);
+        this.http.put(url, body, options).subscribe(function (res) {
+            console.log(res);
+            _this.router.navigate(['/admin/boisson/modified']);
+        }, function (err) {
+            console.log(err);
+            alert('Une erreur est survenue lors de la mise à jour');
+        });
     };
     BoissonComponent.prototype.extractData = function (res) {
         console.log('extractData');

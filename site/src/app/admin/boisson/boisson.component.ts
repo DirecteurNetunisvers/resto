@@ -79,20 +79,30 @@ export class BoissonComponent implements OnInit {
 		let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
     	let options = new RequestOptions({ headers: cpHeaders });
 
-		let body = JSON.stringify(data);
 		let url = urlApi + '/menu/boisson/' + data.id;
-		console.log(this.headers);
-		return this.http.put(
-			url,
-			data,
-			options
-		).map(success => {
-			success.status;
-			console.log('resss');
-		})
-		.catch(this.handleError);
 		
+		let dataToPut = {
+			nom: data.nom,
+			pm: data.pm,
+			gm: data.gm
+		}
 
+		let body = JSON.stringify(dataToPut);
+
+		this.http.put(
+			url,
+			body,
+			options
+		).subscribe(
+			res => {
+				console.log(res);
+				this.router.navigate(['/admin/boisson/modified']);
+			},
+			err => {
+				console.log(err);
+				alert('Une erreur est survenue lors de la mise à jour');
+			}
+		);		
 	}
 
     private extractData(res: Response) {
