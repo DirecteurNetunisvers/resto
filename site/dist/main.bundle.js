@@ -929,7 +929,8 @@ var routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["g" /* RouterModule 
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return urlApi; });
-var host = 'https://aretmic.com/api/resto1/web/app_dev.php';
+//const host = 'https://aretmic.com/api/resto1/web/app_dev.php';
+var host = 'http://localhost/net_api/web/app_dev.php';
 var urlApi = host;
 
 
