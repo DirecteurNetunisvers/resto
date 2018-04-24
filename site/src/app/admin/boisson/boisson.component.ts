@@ -89,14 +89,15 @@ export class BoissonComponent implements OnInit {
 
 		let body = JSON.stringify(dataToPut);
 
-		this.http.put(
+		return this.http.put(
 			url,
 			body,
 			options
 		).subscribe(
 			res => {
-				console.log(res);
+				this.ngxSmartModalService.closeLatestModal();
 				this.router.navigate(['/admin/boisson/modified']);
+				window.location.reload();
 			},
 			err => {
 				console.log(err);
