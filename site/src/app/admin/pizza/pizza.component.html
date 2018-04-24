@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"> 
     <div class="col-md-4 pull-left">
         <a 
             class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
@@ -22,6 +22,14 @@
     <div class="col-md-12">
         <div class="alert alert-success">
             <strong>Un menu a été supprimé avec success!</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="modified;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un menu a été modifié avec succès !</strong>
         </div>
     </div>
 </div>
@@ -54,6 +62,7 @@
                                     <a 
                                         class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
                                         style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
+                                        (click)="ngxSmartModalService.getModal('modifierModal').open(); modifierPizza(pizza);"
                                     >
                                         Modifier
                                     </a>
@@ -101,5 +110,99 @@
         >
             Annuler
         </button>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #modifierModal identifier="modifierModal">
+    <div *ngIf="pizzaToModifier">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+                Modification du menu {{pizzaToModifier.nom}}
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="table-responsive">
+                <form #pizz="ngForm" (ngSubmit)="onClickSubmit(pizz.value)" method="PUT">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nom 
+                                </th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Nom du pizza" 
+                                        class="form-control form-control-line"
+                                        name="nom"
+                                        ngModel="{{pizzaToModifier.nom}}"
+                                    >
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Petite</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix pour les petites" 
+                                        class="form-control form-control-line"
+                                        name="pm"
+                                        ngModel="{{pizzaToModifier.pm}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Grande</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix pour les grandes" 
+                                        class="form-control form-control-line"
+                                        name="gm"
+                                        ngModel="{{pizzaToModifier.gm}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ingrédient</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Ingrédient" 
+                                        class="form-control form-control-line"
+                                        name="ingredient"
+                                        ngModel="{{pizzaToModifier.ingredient}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>
+                                    <input 
+                                        type="hidden"
+                                        name="id"
+                                        ngModel="{{pizzaToModifier.id}}"
+                                    >
+                                    <input 
+                                        type="submit" 
+                                        value="Modifier"
+                                        class="btn waves-effect waves-light pull-left hidden-lg-down"
+                                        style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;"
+                                    >
+                                    <a 
+                                        class="btn waves-effect waves-light pull-left hidden-lg-down"
+                                        style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
+                                        (click)="modifierModal.close()"
+                                    >
+                                        Annuler
+                                    </a>                                    
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </form>
+            </div>            
+        </div>
     </div>
 </ngx-smart-modal>
