@@ -81,10 +81,10 @@ export class PizzaComponent implements OnInit {
 		let url = urlApi + '/menu/pizza/' + data.id;
 		
 		let dataToPut = {
-			nom       : data.nom,
-			pm 		  : data.pm,
-			gm 		  : data.gm,
-			ingredient: data.ingredient
+			nom       	: data.nom,
+			pm 		  	: data.pm,
+			gm 		  	: data.gm,
+			ingredient	: data.ingredient
 		}
 
 		let body = JSON.stringify(dataToPut);
@@ -94,8 +94,8 @@ export class PizzaComponent implements OnInit {
 			options
 		).subscribe(
 			res => {
-				console.log(res);
-				this.router.navigate(['/admin/pizza/modified']);
+				this.ngxSmartModalService.closeLatestModal();
+				this.router.navigate(['/admin/deletepizza/simple_recharge'])
 			},
 			err => {
 				console.log(err);
