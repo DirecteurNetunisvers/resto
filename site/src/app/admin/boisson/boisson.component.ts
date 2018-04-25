@@ -96,8 +96,7 @@ export class BoissonComponent implements OnInit {
 		).subscribe(
 			res => {
 				this.ngxSmartModalService.closeLatestModal();
-				this.router.navigate(['/admin/boisson/modified']);
-				window.location.reload();
+				this.router.navigate(['/admin/deleteboisson/simple_recharge'])
 			},
 			err => {
 				console.log(err);
