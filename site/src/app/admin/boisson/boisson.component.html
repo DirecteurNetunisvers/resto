@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="col-md-4 pull-left">
+    <div class="col-md-4 col-sm-6 col-xs-12 pull-left">
         <a 
-            class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
+            class="btn waves-effect waves-light btn-primary pull-left"
             style="color: #fff; background: #0275d8 !important; border: 1px solid #0275d8;"
             routerLink="/admin/ajoutboisson"
         >
@@ -60,14 +60,14 @@
                                 <td>{{boisson.gm}}</td>
                                 <td style="width: 25%;">
                                     <a 
-                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down"
+                                        class="btn waves-effect waves-light btn-primary pull-left"
                                         style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
                                         (click)="ngxSmartModalService.getModal('modifierModal').open(); modifierBoisson(boisson);"
                                     >
                                         Modifier
                                     </a>
                                     <a 
-                                        class="btn waves-effect waves-light btn-primary pull-left hidden-lg-down dialog__close-btn ng-tns-c5-2 ng-star-inserted"
+                                        class="btn waves-effect waves-light btn-primary pull-left dialog__close-btn ng-tns-c5-2 ng-star-inserted"
                                         style="color: #fff; background: red !important; border: 1px solid red;"                                        
                                         (click)="ngxSmartModalService.getModal('myModal').open(); supprimerBoisson(boisson);"
                                     >
@@ -175,11 +175,11 @@
                                     <input 
                                         type="submit" 
                                         value="Modifier"
-                                        class="btn waves-effect waves-light pull-left hidden-lg-down"
+                                        class="btn waves-effect waves-light pull-left"
                                         style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;"
                                     >
                                     <a 
-                                        class="btn waves-effect waves-light pull-left hidden-lg-down"
+                                        class="btn waves-effect waves-light pull-left"
                                         style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
                                         (click)="modifierModal.close()"
                                     >
