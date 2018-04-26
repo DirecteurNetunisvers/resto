@@ -5678,7 +5678,8 @@ When click on sidebar toggler and also for tablet
   .mini-sidebar .left-sidebar, .mini-sidebar .sidebar-footer {
     left: -240px; }
   .mini-sidebar.show-sidebar .left-sidebar, .mini-sidebar.show-sidebar .sidebar-footer {
-    left: 0px; } }
+    left: 0px; } 
+}
 
 /*
 Template Name: Material Pro Admin
