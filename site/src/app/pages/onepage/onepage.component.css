@@ -49,7 +49,29 @@ ul.window li {display: block; }
     cursor: pointer;
     color: white;
 }
+@media screen and (max-width: 767px) {
+ .menu {
+    height: 126px;
+    background: #292b2c;
+    padding-top: 15px;
+    z-index: 9999;
+    width: 100%;
+    position: fixed;
+  }
+  .pull-right{
+    float: left;
+  }
+}
 
+/* @media screen and (max-width: 1199px){
+  .col-md-2 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 16.666667%;
+        -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+} */
 #pizza {
   height: auto;
   padding-top: 60px;
