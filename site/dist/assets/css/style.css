@@ -1,27 +1,3 @@
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-/**
- * Table Of Content
- *
- * 	1. Globals
- *	2. Headers
- *	3. Navigations
- *	4. Banners
- *	5. Footers
- *	6. app
- *	7. Widgets
- *	8. Custom Templates
- */
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 /*Theme Colors*/
 /*bootstrap Color*/
@@ -51,27 +27,6 @@ File: scss
     top: calc(50% - 3.5px);
     left: calc(50% - 3.5px); }
 
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-/**
- * Table Of Content
- *
- * 	1. Globals
- *	2. Headers
- *	3. Navigations
- *	4. Banners
- *	5. Footers
- *	6. Posts
- *	7. Widgets
- *	8. Custom Templates
- */
-/******************* 
-Global Styles 
-*******************/
 * {
   outline: none; }
 
@@ -1901,9 +1856,6 @@ Layouts
   margin: 0 auto; }
 
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 /*============================================================== 
@@ -5373,9 +5325,6 @@ Contact app Page
   display: block; }
 
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 /*******************
@@ -5682,9 +5631,6 @@ When click on sidebar toggler and also for tablet
 }
 
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 /*******************
@@ -6376,9 +6322,6 @@ File: scss
       margin-bottom: 0px !important; }
 
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 @media (min-width: 1600px) {
@@ -6542,9 +6485,6 @@ File: scss
   padding-left: 15px; }
 
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 /*============================================================== 
@@ -6748,15 +6688,9 @@ File: scss
     width: calc(100% - 80px); } }
 
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 /*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
 File: scss
 */
 /*Theme Colors*/

@@ -1,4 +1,11 @@
 <div class="row">
+    <div 
+        class="col-md-12 col-sm-12 col-xs-12 pull-left alert alert-warning action_mobile_warning"
+    >
+        <strong>Cliquer sur un nom de boisson pour modifier ou suppimer</strong>
+    </div>
+</div><br>
+<div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12 pull-left">
         <a 
             class="btn waves-effect waves-light btn-primary pull-left"
@@ -21,7 +28,7 @@
 <div class="row" *ngIf="deleted;">
     <div class="col-md-12">
         <div class="alert alert-success">
-            <strong>Une nouvelle boisson a été supprimée avec succès !</strong>
+            <strong>Une boisson a été supprimée avec succès !</strong>
         </div>
     </div>
 </div>
@@ -37,9 +44,10 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">Liste des boissons</h4>
-                <hr>               
+            <div class="card-block bg-info">
+                <h4 class="text-white card-title">Liste des boissons</h4>
+            </div>        
+            <div class="card-block">                             
                 <div class="table-responsive">
                     <div id="overlay" *ngIf="!boissonCharger;">
                         <div id="text">Chargement des boissons en cours...</div>
@@ -50,15 +58,21 @@
                                 <th>Nom de la boisson</th>
                                 <th>33cl</th>
                                 <th>50cl</th>
-                                <th>Action</th>
+                                <th class="action_mobile">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let boisson  of boissons">
-                                <td>{{boisson.nom | uppercase}}</td>
-                                <td>{{boisson.pm}}</td>
-                                <td>{{boisson.gm}}</td>
-                                <td style="width: 25%;">
+                                <td (click)="ngxSmartModalService.getModal('modifierModal').open(); modifierBoisson(boisson);">
+                                    {{boisson.nom | uppercase}}
+                                </td>
+                                <td>
+                                    {{boisson.pm}}
+                                </td>
+                                <td>
+                                    {{boisson.gm}}
+                                </td>
+                                <td style="width: 25%;" class="action_mobile">
                                     <a 
                                         class="btn waves-effect waves-light btn-primary pull-left"
                                         style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
@@ -165,6 +179,13 @@
                             </tr>
                             <tr>
                                 <th>
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left dialog__close-btn ng-tns-c5-2 ng-star-inserted action_mobile_warning"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"                                        
+                                        (click)="ngxSmartModalService.getModal('modifierModal').close(); ngxSmartModalService.getModal('myModal').open(); supprimerBoisson(boissonToModifier);"
+                                    >
+                                        Supprimer
+                                    </a>                                    
                                 </th>
                                 <th>
                                     <input 
