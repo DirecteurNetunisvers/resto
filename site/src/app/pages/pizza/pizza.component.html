@@ -15,10 +15,10 @@
     		
     	</div>
     	<div class="col-md-2">
-    		<p><strong>Petite</strong></p>
+    		<p id="hide-mobile"><strong>Petite</strong></p>
     	</div>
     	<div class="col-md-2">
-    		<p><strong>Grande</strong></p>
+    		<p id="hide-mobile"><strong>Grande</strong></p>
     	</div>
     </div>	
 
@@ -27,11 +27,13 @@
     		<h3>{{i.nom | uppercase}}</h3>
     		<p>{{i.ingredient}}<p>
     	</div>
-    	<div class="col-md-2">
-    		<p>{{i.pm}}<p>
+    	<div class="col-md-2" id="list-prix">
+            <p id="show-mobile"><strong>Petite</strong></p>
+    		<p id="prix_pm">{{i.pm}}<p>
     	</div>
-    	<div class="col-md-2">
-    		<p>{{i.gm}}<p>
+    	<div class="col-md-2" id="list-prix">
+            <p id="show-mobile"><strong>Grande</strong></p>
+    		<p id="prix_gm">{{i.gm}}<p>
     	</div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <!-- Menu -->
-<div class="menu">
-	<div class="container">
+<div class="menu" id="nav-mobile">
+	<div class="container" id="menu-bureau">
 		<div class="row">
 			<div class="col-md-2">
 				
@@ -57,7 +57,204 @@
 			</div>				
 		</div>
 	</div>
+	<div class="container-fluid" id="menu-bureau-small">
+		<div class="row">
+			<div class="col-md-2">
+				
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">
+						<a 
+							class="pull-left k"
+							(click)="goTo('#home')"
+						>
+							Accueil
+						</a>						
+					</div>
+					<div class="col-md-4">
+						<a 
+							class="text-center"
+							(click)="goTo('#pizza')"
+						>
+							Notre carte
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a 
+							class="pull-right"
+							(click)="goTo('#contact')"
+						>
+							Horaires & contact
+						</a>
+					</div>					
+				</div>
+			</div>
+			<div class="col-md-2">
+				<a 
+					routerLink="/"				 
+				>
+					<img src="assets/images/logo/logo_fb.png">
+				</a>
+				<a 
+					routerLink="/"					 
+				>
+					<img src="assets/images/logo/logo_instagram.png">
+				</a>
+				<a 
+					routerLink="/"					 
+				>
+					<img src="assets/images/logo/logo-o_o.png">
+				</a>
+				<a 
+					routerLink="/"					 
+				>
+					<img src="assets/images/logo/logo_etoil.png">
+				</a>
+			</div>				
+		</div>
+	</div>
+	<div class="container-fluid" id="menu-tablet">
+		<div class="row">
+			<div class="col-md-2">
+				
+			</div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-3">
+						<a 
+							class="pull-left k"
+							(click)="goTo('#home')"
+						>
+							Accueil
+						</a>						
+					</div>
+					<div class="col-md-3">
+						<a 
+							class="text-center"
+							(click)="goTo('#pizza')"
+						>
+							Notre carte
+						</a>
+					</div>
+					<div class="col-md-3">
+						<a 
+							class="pull-right"
+							(click)="goTo('#contact')"
+						>
+							Horaires & contact
+						</a>
+					</div>
+					<div class="col-md-3">
+						<a 
+							routerLink="/"				 
+						>
+							<img src="assets/images/logo/logo_fb.png">
+						</a>
+						<a 
+							routerLink="/"					 
+						>
+							<img src="assets/images/logo/logo_instagram.png">
+						</a>
+						<a 
+							routerLink="/"					 
+						>
+							<img src="assets/images/logo/logo-o_o.png">
+						</a>
+						<a 
+							routerLink="/"					 
+						>
+							<img src="assets/images/logo/logo_etoil.png">
+						</a>
+					</div>						
+				</div>
+			</div>
+						
+		</div>
+	</div>
+	<div class="container-fluid" id="menu-tablet-min">
+		<div class="row">
+			
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-3">
+						<a 
+							class="pull-left k"
+							(click)="goTo('#home')"
+						>
+							Accueil
+						</a>						
+					</div>
+					<div class="col-md-3">
+						<a 
+							class="text-center"
+							(click)="goTo('#pizza')"
+						>
+							Notre carte
+						</a>
+					</div>
+					<div class="col-md-3">
+						<a 
+							class="pull-right"
+							(click)="goTo('#contact')"
+						>
+							Horaires & contact
+						</a>
+					</div>
+					<div class="col-md-3">
+						<a 
+							routerLink="/"				 
+						>
+							<img src="assets/images/logo/logo_fb.png">
+						</a>
+						<a 
+							routerLink="/"					 
+						>
+							<img src="assets/images/logo/logo_instagram.png">
+						</a>
+						<a 
+							routerLink="/"					 
+						>
+							<img src="assets/images/logo/logo-o_o.png">
+						</a>
+						<a 
+							routerLink="/"					 
+						>
+							<img src="assets/images/logo/logo_etoil.png">
+						</a>
+					</div>						
+				</div>
+			</div>
+						
+		</div>
+	</div>
+
+	<div id="menu-mobile">
+		<div class="topnav" id="myTopnav">
+			  <a 		(click)="goTo('#home')"
+									>
+							Accueil
+						</a>
+			  <a 
+							(click)="goTo('#pizza')"
+						>
+							Notre carte
+						</a>
+			  <a 
+							(click)="goTo('#contact')"
+						>
+							Horaires & contact
+						</a>
+			 
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="myFunction()">&#9776;</a>
+		</div>
+		
+		
+	</div>
+	
 </div>
+
+ 
 <!-- Fin menu -->
 
 <div id="home">
@@ -111,3 +308,8 @@
 <div id="contact">
 	<app-contact></app-contact>
 </div>
+
+
+<script>
+
+</script>
