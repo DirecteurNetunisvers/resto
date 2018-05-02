@@ -50,5 +50,12 @@ export class OnepageComponent implements OnInit {
 		});
 		this.pageScrollService.start(pageScrollInstance);
 	};
-
+	public  myFunction(): void {
+    var x = document.getElementById("myTopnav");
+	    if (x.className === "topnav") {
+	        x.className += " responsive";
+	    } else {
+	        x.className = "topnav";
+    }
+}
 }
