@@ -5,33 +5,35 @@
     <div class="row" style="margin-top: 40px;">
         <div class="col-md-4">
             <h1>NOS BOISSONS</h1>
-        	<hr style="border-bottom: 3px solid rgba(153, 153, 153, 1) !important;">
+            <hr style="border-bottom: 3px solid rgba(153, 153, 153, 1) !important;">
         </div>
     </div>
-	
+    
     <div class="row">
-    	<div class="col-md-8">
-    		
-    	</div>
-    	<div class="col-md-2">
-    		<p><strong>33cl</strong></p>
-    	</div>
-    	<div class="col-md-2">
-    		<p><strong>50cl</strong></p>
-    	</div>
-    </div>	
+        <div class="col-md-8">
+            
+        </div>
+        <div class="col-md-2">
+            <p id="hide-mobile"><strong>33cl</strong></p>
+        </div>
+        <div class="col-md-2">
+            <p id="hide-mobile"><strong>50cl</strong></p>
+        </div>
+    </div>  
 
     <div class="row" *ngFor="let i of boissons">
-    	<div class="col-md-8">
-    		<p>{{i.nom | uppercase}}</p>
-    	</div>
-    	<div class="col-md-2">
-    		<p>{{i.pm}}</p>
-    	</div>
-    	<div class="col-md-2">
-    		<p>{{i.gm}}</p>
-    	</div>
-    </div>	
+        <div class="col-md-8">
+            <p>{{i.nom | uppercase}}</p>
+        </div>
+        <div class="col-md-2" id="list-prix">
+            <p id="show-mobile"><strong>33cl</strong></p>
+            <p id="prix_pm">{{i.pm}}</p>
+        </div>
+        <div class="col-md-2" id="list-prix">
+            <p id="show-mobile"><strong>50cl</strong></p>
+            <p id="prix_gm">{{i.gm}}</p>
+        </div>
+    </div>  
 </div>
 
 <div parallax class="parallax-boisson" [config]="{axis: X, speed: -.0}">
