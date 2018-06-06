@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrl: string;
+    chargementBO = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -48,6 +49,7 @@ export class LoginComponent implements OnInit {
                     let access = sha1(this.model.password) == data['password'];
                     if ( access ) {
                         localStorage.setItem('infosUtilisateur', JSON.stringify({'user': data}));
+                        this.chargementBO = true;
                         this.router.navigate([this.returnUrl]);                    
                     } else {
                         this.alertService.error('Erreur de mot de passe');

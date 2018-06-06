@@ -22,7 +22,7 @@
 }
 
 .parallax-boisson {
-    background: url('boisson.webp') no-repeat center center fixed;
+    background: url('boisson.png') no-repeat center center fixed;
     height: 300px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
