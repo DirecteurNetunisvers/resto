@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest; // alias pour toutes les annotations
 use FOS\RestBundle\View\ViewHandler;
 use FOS\RestBundle\View\View; // Utilisation de la vue de FOSRestBundle
-use AppBundle\Entity\Boisson;
-use AppBundle\Form\BoissonType;
-use AppBundle\Entity\Pizza;
-use AppBundle\Form\PizzaType;
+use AppBundle\Entity\Boisson1;
+use AppBundle\Form\Boisson1Type;
+use AppBundle\Entity\Pizza1;
+use AppBundle\Form\Pizza1Type;
 
 class MenuController extends Controller {
 
@@ -22,7 +22,7 @@ class MenuController extends Controller {
      */
     public function getBoissonAction(Request $request) {
         $Boisson = $this->get('doctrine.orm.entity_manager')
-                ->getRepository('AppBundle:Boisson')
+                ->getRepository('AppBundle:Boisson1')
                 ->findAll();
 
         return $Boisson;
@@ -33,8 +33,8 @@ class MenuController extends Controller {
      * @Rest\Post("/menu/boisson")
      */
     public function postBoissonAction(Request $request) {
-        $Boisson = new Boisson();
-        $form = $this->createForm(BoissonType::class, $Boisson);
+        $Boisson = new Boisson1();
+        $form = $this->createForm(Boisson1Type::class, $Boisson);
 
         $form->submit($request->request->all()); // Validation des données
 
@@ -54,7 +54,7 @@ class MenuController extends Controller {
      */
     public function removeBoissonAction(Request $request) {
         $em = $this->get('doctrine.orm.entity_manager');
-        $Boisson = $em->getRepository('AppBundle:Boisson')
+        $Boisson = $em->getRepository('AppBundle:Boisson1')
                     ->find($request->get('id'));
 
         if ($Boisson) {
@@ -69,7 +69,7 @@ class MenuController extends Controller {
      */
     public function updateBoissonAction(Request $request) {
         $Boisson = $this->get('doctrine.orm.entity_manager')
-                ->getRepository('AppBundle:Boisson')
+                ->getRepository('AppBundle:Boisson1')
                 ->find($request->get('id')); // L'identifiant en tant que paramètre n'est plus nécessaire
         /* @var $Boisson Place */
 
@@ -80,7 +80,7 @@ class MenuController extends Controller {
             );
         }
 
-        $form = $this->createForm(BoissonType::class, $Boisson);
+        $form = $this->createForm(Boisson1Type::class, $Boisson);
 
          // Le paramètre false dit à Symfony de garder les valeurs dans notre 
          // entité si l'utilisateur n'en fournit pas une dans sa requête
@@ -104,7 +104,7 @@ class MenuController extends Controller {
      */
     public function getPizzaAction(Request $request) {
         $Pizza = $this->get('doctrine.orm.entity_manager')
-                ->getRepository('AppBundle:Pizza')
+                ->getRepository('AppBundle:Pizza1')
                 ->findAll();
 
         return $Pizza;
@@ -115,8 +115,8 @@ class MenuController extends Controller {
      * @Rest\Post("/menu/pizza")
      */
     public function postPizzaAction(Request $request) {
-        $Pizza = new Pizza();
-        $form = $this->createForm(PizzaType::class, $Pizza);
+        $Pizza = new Pizza1();
+        $form = $this->createForm(Pizza1Type::class, $Pizza);
 
         $form->submit($request->request->all()); // Validation des données
 
@@ -136,7 +136,7 @@ class MenuController extends Controller {
      */
     public function removePizzaAction(Request $request) {
         $em = $this->get('doctrine.orm.entity_manager');
-        $Pizza = $em->getRepository('AppBundle:Pizza')
+        $Pizza = $em->getRepository('AppBundle:Pizza1')
                     ->find($request->get('id'));
 
         if ($Pizza) {
@@ -151,7 +151,7 @@ class MenuController extends Controller {
      */
     public function updatePizzaAction(Request $request) {
         $Pizza = $this->get('doctrine.orm.entity_manager')
-                ->getRepository('AppBundle:Pizza')
+                ->getRepository('AppBundle:Pizza1')
                 ->find($request->get('id')); // L'identifiant en tant que paramètre n'est plus nécessaire
         /* @var $Pizza Place */
 
@@ -162,7 +162,7 @@ class MenuController extends Controller {
             );
         }
 
-        $form = $this->createForm(PizzaType::class, $Pizza);
+        $form = $this->createForm(Pizza1Type::class, $Pizza);
 
          // Le paramètre false dit à Symfony de garder les valeurs dans notre 
          // entité si l'utilisateur n'en fournit pas une dans sa requête

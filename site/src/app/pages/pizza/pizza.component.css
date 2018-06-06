@@ -43,7 +43,7 @@
 }
 
 .parallax-pizza {
-    background: url('pizza.webp') no-repeat center center fixed;
+    background: url('pizza.png') no-repeat center center fixed;
     height: 300px;
     -webkit-background-size: cover;
     -moz-background-size: cover;

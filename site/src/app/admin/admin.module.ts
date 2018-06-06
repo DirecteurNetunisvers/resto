@@ -6,6 +6,7 @@ import { RouterModule, Router, Routes } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { NgxSmartModalModule, NgxSmartModalService } from 'ngx-smart-modal';
+import { ImageUploadModule } from "angular2-image-upload";
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { adminRouting } from './admin.routing';
@@ -17,6 +18,8 @@ import { DeletePizzaComponent } from './pizza/delete/delete.component';
 import { DeleteBoissonComponent } from './boisson/delete/delete.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { AjoutUtilisateurComponent } from './utilisateur/ajout/ajout.component';
+import { DeleteUtilisateurComponent } from './utilisateur/delete/delete.component';
+import { ModifierUtilisateurComponent } from './utilisateur/modifier/modifier.component';
 // import { RegisterComponent } from './register/register.component';
 // import { AlertComponent } from '../_directives/alert/alert.component';
 // import { LoginComponent } from './login/login.component';
@@ -29,6 +32,7 @@ import { AjoutUtilisateurComponent } from './utilisateur/ajout/ajout.component';
     FormsModule,
     HttpModule,
     NgxSmartModalModule.forRoot(),
+    ImageUploadModule.forRoot(),
     // AlertComponent
   ],
   declarations: [
@@ -41,6 +45,8 @@ import { AjoutUtilisateurComponent } from './utilisateur/ajout/ajout.component';
     DeleteBoissonComponent,
     UtilisateurComponent,
     AjoutUtilisateurComponent,
+    DeleteUtilisateurComponent,
+    ModifierUtilisateurComponent,
     // RegisterComponent,
     // LoginComponent
   ],

@@ -9,14 +9,39 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./ajout.component.css']
 })
 export class AjoutUtilisateurComponent implements OnInit {
-
+	form;
+	file;
+	fileUploadedSrc;
 	constructor(
 		private http: Http,
 		private router: Router
 	) { }
 
 	ngOnInit() {
+		this.fileUploadedSrc = 'assets/images/profil.png';
 	}
+
+	onUploadFinished(event: EventTarget) {
+	    let eventObj: MSInputMethodContext = <MSInputMethodContext> event;
+		let target: HTMLInputElement = <HTMLInputElement> eventObj.target;
+	    let files: FileList = target.files;
+	    this.file = files[0];
+
+		this.uploadImage()
+			.map(
+				(response) => response.json()
+			)			
+			.subscribe(
+				res	=> {
+					let host = urlApi.split('/app_dev.php');
+					this.fileUploadedSrc = host[0] + res.filename;
+				}, 
+				err => {
+					console.log(err);
+					alert(err);
+				}
+			);
+	}	
 
 	onClickSubmit(data) {
 		let messageErreur = this.validationFomulaire(data);
@@ -24,18 +49,39 @@ export class AjoutUtilisateurComponent implements OnInit {
 			alert(messageErreur);
 			return false;
 		}
-		let url = urlApi + '/utilisateur';
-		this.http.post(
+
+		data.filename = this.fileUploadedSrc !== 'assets/images/profil.png' 
+							? this.fileUploadedSrc
+							: 'pas_de_photo' 
+
+		this.ajouterUtilisateur(data);
+	}
+
+	uploadImage() {
+		this.form = document.getElementById("photoForm");
+		let data = new FormData(this.form);
+
+		let url = urlApi + '/uploads';
+		return this.http.post(
 			url,
 			data
+		);
+	}
+
+	ajouterUtilisateur(utilisateur) {
+		let url = urlApi + '/utilisateur';
+		return this.http.post(
+			url,
+			utilisateur
 		).subscribe(
 			res => {
-				this.router.navigate(['/admin/utilisateur']);
+				this.router.navigate(['/admin/utilisateur/liste']);
 			},
 			err => {
-				alert('Ce pseudo ' + data.pseudo + ' est déjà utilisé');
+				console.log(err);
+				alert('Oups! Une erreur est survenue');
 			}
-		);      
+		);
 	}
 
 	validationFomulaire(data) {

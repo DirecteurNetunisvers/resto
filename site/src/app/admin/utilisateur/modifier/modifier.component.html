@@ -3,7 +3,7 @@
     <div class="col-lg-4 col-xlg-3 col-md-5">
         <div class="card">
             <div class="card-block" style="text-align: center;">
-                <form id="photoForm">                                      
+                <form id="photoForm">                             
                     <img                      
                         src="{{fileUploadedSrc}}"
                         class="img-circle" 
@@ -26,11 +26,11 @@
     </div>
     <!-- Column -->
     <!-- Column -->
-    <div class="col-lg-8 col-xlg-9 col-md-7">
+    <div class="col-lg-8 col-xlg-9 col-md-7" *ngIf="utilisateurPret">
         <div class="card">
             <div class="card-block">
                 <form #utilisateurForm="ngForm" (ngSubmit)="onClickSubmit(utilisateurForm.value)" class="form-horizontal form-material">
-                	{{utilisateursCharger}}
+                	<input type="hidden" name="id" ngModel="{{utilisateur.id}}">
                     <div class="form-group">
                         <label class="col-md-12">Pseudo</label>
                         <div class="col-md-12">
@@ -39,7 +39,7 @@
                             	placeholder="Ex: John60" 
                             	class="form-control form-control-line"
                             	name="pseudo" 
-                            	ngModel
+                            	ngModel="{{utilisateur.pseudo}}"
                             >
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             	placeholder="Ex: email@email.com" 
                             	class="form-control form-control-line" 
                             	name="email" 
-                            	ngModel
+                            	ngModel="{{utilisateur.email}}"
                             >
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                             	placeholder="Ex: Johnathan" 
                             	class="form-control form-control-line"
                             	name="nom"
-                            	ngModel
+                            	ngModel="{{utilisateur.nom}}"
                             >
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                             	placeholder="Ex: Micher" 
                             	class="form-control form-control-line"
                             	name="prenom"
-                            	ngModel
+                            	ngModel="{{utilisateur.prenom}}"
                             >
                         </div>
                     </div>
@@ -85,15 +85,30 @@
                             <select 
                             	class="form-control form-control-line"
                             	name="role"
-                            	ngModel
+                            	ngModel="{{utilisateur.role}}"
                             >
-                                <option value="Administrateur">Administrateur</option>
-                                <option value="Contributeur">Contributeur</option>
-                                <option value="Utilisateur">Utilisateur</option>
+                                <option 
+                                	value="Administrateur" 
+                                	[selected]="utilisateur.role == Administrateur"
+                                >
+                                	Administrateur
+                            	</option>
+                                <option 
+                                	value="Contributeur"
+                                	[selected]="utilisateur.role == Contributeur"
+                                >
+                                	Contributeur
+                                </option>
+                                <option 
+                                	value="Utilisateur" 
+                                	[selected]="utilisateur.role == Utilisateur"
+                                >
+                                	Utilisateur
+                                </option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="col-md-12">Mot de passe</label>
                         <div class="col-md-12">
                             <input 
@@ -104,10 +119,10 @@
                             	ngModel
                             >
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <button class="btn btn-success col-sm-4">Envoyer</button>
+                            <button class="btn btn-success col-sm-4">Modifier</button>
                             <a 
 					            class="btn btn-warning col-sm-4"
 					            routerLink="/admin/utilisateur/liste"

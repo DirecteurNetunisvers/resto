@@ -35,7 +35,7 @@ export class PizzaComponent implements OnInit {
 	 	this.headers = new Headers({ 'Content-Type': 'application/json', 
                                      'Accept': 'q=0.8;application/json;q=0.9' });
         this.options = new RequestOptions({ headers: this.headers });
-         }
+    }
 
 	ngOnInit() {
 		this.insertOrList = (this.route.snapshot.params.insertOrList == 'insert') ? true : false;
