@@ -212,3 +212,7 @@ alert {
 	text-align: center;
 	color: red;
 }
+
+.preloader {
+	display: block !important;
+}

@@ -8,6 +8,39 @@
         </a>   
     </div>
 </div><br>
+
+<div class="row">
+    <div 
+        class="col-md-12 col-sm-12 col-xs-12 pull-left alert alert-warning action_mobile_warning"
+    >
+        <strong>Cliquer sur un nom d'utilisateur pour modifier ou suppimer</strong>
+    </div>
+</div><br>
+
+<div class="row" *ngIf="insertOrList;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un nouveau utilisateur a été ajouté avec success!</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="deleted;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un utilisateur a été supprimé avec success!</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="modified;">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <strong>Un utilisateur a été modifié avec succès !</strong>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <!-- column -->
     <div class="col-lg-12">
@@ -22,18 +55,31 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Identifient</th>
-                                <th>Email</th>
+                                <th>pseudo</th>
                                 <th>Rôle</th>
+                                <th class="action_mobile">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let utilisateur  of utilisateurs">
-                                <td>{{utilisateur.id}}</td>
                                 <td>{{utilisateur.pseudo}}</td>
-                                <td>{{utilisateur.email}}</td>
                                 <td>{{utilisateur.role}}</td>
+                                <td style="width: 25%;" class="action_mobile">
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left"
+                                        style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a; margin-right: 5px;"
+                                        routerLink="/admin/modifierUtilisateur/{{utilisateur.pseudo}}"
+                                    >
+                                        Modifier
+                                    </a>
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left dialog__close-btn ng-tns-c5-2 ng-star-inserted"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"
+                                        (click)="ngxSmartModalService.getModal('myModal').open();supprimerUtilisateur(utilisateur)"                                        
+                                    >
+                                        Supprimer
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -42,3 +88,134 @@
         </div>
     </div>
 </div>
+
+<ngx-smart-modal #myModal identifier="myModal">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Attention</h4>
+    </div>
+
+    <div class="modal-body">
+        <h3>Voulez vous vraiment supprimer cet utilisateur ?</h3>
+    </div>
+
+    <div class="modal-footer">
+        <a 
+            type="button"
+            class="btn btn-default" 
+            data-dismiss="modal"
+            style="color: #fff; background: red !important;"
+            routerLink="/admin/deleteutilisateur/{{idUtilisateurTodelete}}" 
+        >
+            Supprimer
+        </a>
+        <button 
+            type="button"
+            class="btn btn-primary"
+            style="color: #fff; background: #f07f0a !important; border: 1px solid #f07f0a;" 
+            (click)="myModal.close()"
+        >
+            Annuler
+        </button>
+    </div>
+</ngx-smart-modal>
+
+<!-- <ngx-smart-modal #modifierModal identifier="modifierModal">
+    <div *ngIf="utilisateurToModifier">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+                Modification du menu {{utilisateurToModifier.nom}}
+            </h4>
+        </div>
+        <div class="modal-body">
+            <div class="table-responsive">
+                <form #pizz="ngForm" (ngSubmit)="onClickSubmit(pizz.value)" method="PUT">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nom 
+                                </th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Nom du pizza" 
+                                        class="form-control form-control-line"
+                                        name="nom"
+                                        ngModel="{{utilisateurToModifier.nom}}"
+                                    >
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Petite</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix pour les petites" 
+                                        class="form-control form-control-line"
+                                        name="pm"
+                                        ngModel="{{utilisateurToModifier.pm}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Grande</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Prix pour les grandes" 
+                                        class="form-control form-control-line"
+                                        name="gm"
+                                        ngModel="{{utilisateurToModifier.gm}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ingrédient</th>
+                                <th>
+                                    <input 
+                                        type="text" 
+                                        placeholder="Ingrédient" 
+                                        class="form-control form-control-line"
+                                        name="ingredient"
+                                        ngModel="{{utilisateurToModifier.ingredient}}"
+                                    >                                   
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <a 
+                                        class="btn waves-effect waves-light btn-primary pull-left dialog__close-btn ng-tns-c5-2 ng-star-inserted action_mobile_warning"
+                                        style="color: #fff; background: red !important; border: 1px solid red;"                                        
+                                        (click)="ngxSmartModalService.getModal('modifierModal').close(); ngxSmartModalService.getModal('myModal').open(); supprimerUtilisateur(utilisateurToModifier);"
+                                    >
+                                        Supprimer
+                                    </a>                                    
+                                </th>
+                                <th>
+                                    <input 
+                                        type="hidden"
+                                        name="id"
+                                        ngModel="{{utilisateurToModifier.id}}"
+                                    >
+                                    <input 
+                                        type="submit" 
+                                        value="Modifier"
+                                        class="btn waves-effect waves-light pull-left"
+                                        style="color: #fff; background: #097912 !important; border: 1px solid #097912 !important; margin-right: 10px;"
+                                    >
+                                    <a 
+                                        class="btn waves-effect waves-light pull-left"
+                                        style="color: #fff; background: #f0a00e !important; border: 1px solid #d8aa02"
+                                        (click)="modifierModal.close()"
+                                    >
+                                        Annuler
+                                    </a>                                    
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </form>
+            </div>            
+        </div>
+    </div>
+</ngx-smart-modal> -->
